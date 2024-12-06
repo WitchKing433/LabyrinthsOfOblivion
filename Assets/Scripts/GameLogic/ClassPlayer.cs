@@ -23,8 +23,8 @@ namespace ClassLibraryMazeGame
         public void AddCharacterToTeam(ClassCharacter character)
         {
             team.Add(character);
-            selfBase.AddCharacterToBase(character);
             character.owner = this;
+            selfBase.AddCharacterToBase(character);            
         }
         public void PassTurn()
         {
@@ -32,7 +32,8 @@ namespace ClassLibraryMazeGame
             {
                 team[i].PassTurn();
             }
-            asleep--;
+            if(asleep != 0)
+                asleep--;
             selfBase.RandomPlaceCharacters();
         }
     }

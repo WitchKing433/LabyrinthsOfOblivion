@@ -8,6 +8,8 @@ namespace ClassLibraryMazeGame
 {
     public class ClassBase:ClassMazeObject
     {
+        public delegate void InstantiateCharacterEvent(ClassCharacter character);
+        public event InstantiateCharacterEvent instantiateCharacterEvent;
         int radius;
         List<ClassCell> influenceArea;
         ClassPlayer owner;
@@ -42,11 +44,12 @@ namespace ClassLibraryMazeGame
             {
                 influenceArea = new List<ClassCell>();
                 AssignArea(destination.Row, destination.Column);
-                if (influenceArea.Count < 3)                            //cambiar el número si se aumentan la cantidad de personajes
-                    return false;
-                destination.SetMazeObject(this);                                
-                Factory.game.maze.freeCells.Remove(destination);
-                return true;
+                if (influenceArea.Count >= 3 && !VerifyBaseCollision())
+                {
+                    destination.SetMazeObject(this);
+                    Factory.game.maze.freeCells.Remove(destination);
+                    return true;
+                }
             }
             return false;
         }
@@ -77,6 +80,18 @@ namespace ClassLibraryMazeGame
                 }
             }
         }
+        public bool VerifyBaseCollision()
+        {
+            if (owner.opponent.selfBase.influenceArea != null)
+            {
+                for (int i = 0; i < influenceArea.Count; i++)
+                {
+                    if (owner.opponent.selfBase.influenceArea.Contains(influenceArea[i]))
+                        return true;
+                }
+            }
+            return false;
+        }
         public void RandomPlaceCharacters()
         {
             Random random = new Random();
@@ -89,6 +104,7 @@ namespace ClassLibraryMazeGame
                 }
                 while (influenceArea[r].character != null);
                 influenceArea[r].SetCharacter(inactiveCharacters[0]);
+                instantiateCharacterEvent.Invoke(inactiveCharacters[0]);
                 inactiveCharacters[0].ResetStats();
                 inactiveCharacters.RemoveAt(0);
             }

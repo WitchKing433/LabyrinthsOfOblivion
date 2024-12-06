@@ -49,29 +49,6 @@ namespace ClassLibraryMazeGame
             }
 
         }
-
-        /*public void Clear()
-        {
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    if (maze[i, j] != null)
-                    {
-                        if (maze[i, j].mazeObject != null)
-                        {
-                            if (maze[i, j].mazeObject.cell != null)
-                            {
-                                maze[i, j].mazeObject.cell = null;
-                            }
-                            maze[i, j].mazeObject = null;
-                        }
-                        maze[i, j] = null;
-                    }
-                }
-            }
-        }
-        */
         public void CreateRoad()
         {
             freeCells = new List<ClassCell>();
@@ -193,6 +170,13 @@ namespace ClassLibraryMazeGame
                 randomCell = Factory.game.maze.freeCells[ran.Next(Factory.game.maze.freeCells.Count)];
             } while (randomCell.character != null || randomCell.mazeObject != null);
             return randomCell;
+        }
+        public bool CloseCells(ClassCell ownCell, ClassCell otherCell)
+        {
+            if( !(ownCell.Row == otherCell.Row && ownCell.Column == otherCell.Column) && (ownCell.Row == otherCell.Row || ownCell.Row == otherCell.Row + 1 || ownCell.Row == otherCell.Row -1) && (ownCell.Column == otherCell.Column || ownCell.Column == otherCell.Column + 1 || ownCell.Column == otherCell.Column - 1))
+                return true;
+            return false;
+
         }
     }
 }

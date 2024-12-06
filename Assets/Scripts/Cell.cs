@@ -24,21 +24,21 @@ public class Cell : MonoBehaviour
     {
         if(!(cell.mazeObject is ClassWall))
         {
-            if (GameManager.placeBaseState1)
+            if (GameManager.actionState == GameManager.ActionState.PlaceBase1)
             {
                 if (Factory.game.playerList[0].selfBase.SetBase(cell))
                 {
                     SetBase(cell.X, cell.Y,cell,0);
-                    GameManager.placeBaseState1 = false;
-                    GameManager.placeBaseState2 = true;
+                    GameManager.actionState = GameManager.ActionState.PlaceBase2;
                 }
             }
-            else if(GameManager.placeBaseState2)
+            else if(GameManager.actionState == GameManager.ActionState.PlaceBase2)
             {
                 if (Factory.game.playerList[1].selfBase.SetBase(cell))
                 {
                     SetBase(cell.X, cell.Y, cell, 1);
-                    GameManager.placeBaseState2 = false;
+                    GameManager.actionState = GameManager.ActionState.None;
+                    canvas.GetComponent<GameManager>().GameStart();
                 }
             }
             else if (GameManager.actionState == GameManager.ActionState.Move)
@@ -47,17 +47,13 @@ public class Cell : MonoBehaviour
                 {
                     if(Factory.game.turn.id == 0)
                     {
-                        canvas.GetComponent<GameManager>().player1Scroll.GetComponent<CharacterScroll>().activeCharacter.transform.Translate(this.gameObject.transform.position);
+                        canvas.GetComponent<GameManager>().player1Scroll.GetComponent<CharacterScroll>().activeCharacter.transform.position = this.gameObject.transform.position;
                     }
                     else if (Factory.game.turn.id == 1)
                     {
-                        canvas.GetComponent<GameManager>().player2Scroll.GetComponent<CharacterScroll>().activeCharacter.transform.Translate(this.gameObject.transform.position);
+                        canvas.GetComponent<GameManager>().player2Scroll.GetComponent<CharacterScroll>().activeCharacter.transform.position = this.gameObject.transform.position;
                     }
                 }
-            }
-            else if (GameManager.actionState == GameManager.ActionState.Attack)
-            {
-
             }
             else if (GameManager.actionState == GameManager.ActionState.Skill)
             {
@@ -65,9 +61,8 @@ public class Cell : MonoBehaviour
             }
             else if (GameManager.actionState == GameManager.ActionState.None)
             {
-                Factory.game.selectedCharacter = null;
-                canvas.GetComponent<GameManager>().player1Scroll.GetComponent<CharacterScroll>().activeCharacter = null;
-                canvas.GetComponent<GameManager>().player2Scroll.GetComponent<CharacterScroll>().activeCharacter = null;
+                canvas.GetComponent<GameManager>().SelectCharacter(null);
+                
             }
 
 

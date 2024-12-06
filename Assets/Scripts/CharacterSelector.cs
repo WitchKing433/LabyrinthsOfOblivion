@@ -8,6 +8,8 @@ using UnityEngine;
 public class CharacterSelector : MonoBehaviour
 {
     public Canvas canvas;
+    public GameObject teamCreation;
+    public GameObject gameSubScene;
     public List<ClassCharacter> availableCharacters;
     public List<GameObject> availableCharactersPreview;
     public ClassCharacter characterToShow;
@@ -51,7 +53,13 @@ public class CharacterSelector : MonoBehaviour
         { 
             rick.SetActive(true);
             this.gameObject.SetActive(false);
+            canvas.GetComponent<GameManager>().SuscribeToEvent();
         }
+    }
+    public void StartGame()
+    {
+        teamCreation.SetActive(false);
+        gameSubScene.SetActive(true);
     }
     public void AddCharacterToTeam1()
     {

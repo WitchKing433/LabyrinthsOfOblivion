@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\GameLogic\ClassWall.cs" />
     <Compile Include="Assets\Scripts\CharacterSelector.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassMazeObject.cs" />
+    <Compile Include="Assets\Scripts\PlayersBoard.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassPlayer.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassCell.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassBase.cs" />

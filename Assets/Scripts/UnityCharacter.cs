@@ -5,25 +5,32 @@ using UnityEngine;
 
 public class UnityCharacter : MonoBehaviour
 {
+    public Canvas canvas;
     public GameObject scroll;
     public ClassCharacter daedra;
-    public UnityEngine.Color color;
+    public Sprite characterLargeImage;
     void Start()
     {
-        
+        canvas = FindFirstObjectByType<Canvas>();
 
     }
     void Update()
     {
-        if (daedra.Name == "Hermaeus Mora" && color == null)
-            color = new UnityEngine.Color(6, 113, 0);
+        
     }
     public void OnClick()
     {
-        if(daedra.owner == Factory.game.turn)
+        if (daedra.owner == Factory.game.turn && GameManager.actionState == GameManager.ActionState.None)
         {
-            Factory.game.SelectCharacter(daedra);
-            scroll.GetComponent<CharacterScroll>().activeCharacter = this.gameObject;
+            canvas.GetComponent<GameManager>().SelectCharacter(this.gameObject);
+        }
+        if(daedra.owner != Factory.game.turn && GameManager.actionState != GameManager.ActionState.Move)
+        {
+            canvas.GetComponent<GameManager>().SelectCharacter(this.gameObject);
+        }        
+        if(GameManager.actionState == GameManager.ActionState.Attack && daedra.owner == Factory.game.turn.opponent)
+        {
+            canvas.GetComponent<GameManager>().AttackToMe(this.gameObject);
         }
     }
 }

@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace ClassLibraryMazeGame
 {
     public class ClassCharacter:ClassMazeObject
     {
+        public delegate void SendToBaseEvent(ClassCharacter character);
+        public event SendToBaseEvent sendToBaseEvent;
         public ClassPlayer owner;
         string name;
         int baseHealth;
@@ -32,8 +35,11 @@ namespace ClassLibraryMazeGame
             basePower = p;
             power = p;
         }
+        public int BaseHealth{ get {return baseHealth; } }
         public string Name { get { return name; } }
         public int InactiveTime { get { return inactiveTime; } }
+        public int CoolDown { get { return cooldown; } }
+        public int SkillDuration { get { return skillDuration; } }
         public int Power
         {
             get { return power; }
@@ -120,6 +126,7 @@ namespace ClassLibraryMazeGame
             this.cell.SetCharacter(null);
             this.cell = null;
             inactiveTime = 5;
+            sendToBaseEvent.Invoke(this);
         }
 
         public void Damaged(int h)
@@ -146,18 +153,20 @@ namespace ClassLibraryMazeGame
         {
             Power -= p;
         }
-        public void Attack(ClassCharacter enemy)
+        public bool Attack(ClassCharacter enemy)
         {
-            if (canAttack)
-            {                                             // agregar condicion de que esten uno al lado del otro
+            if (canAttack && Factory.game.maze.CloseCells(cell,enemy.cell))
+            {                                             
                 enemy.Damaged(power);
                 canAttack = false;
+                return true;
             }
+            return false;
         }
         public void AttackBuilding(ClassBase target)
         {
-            if (canAttack)
-            {                                             // agregar condicion de que esten uno al lado del otro
+            if (canAttack && Factory.game.maze.CloseCells(cell, target.cell))
+            {                                            
                 target.Damaged(power);
                 canAttack = false;
             }
@@ -242,20 +251,30 @@ namespace ClassLibraryMazeGame
                 Damaged(poisoned);
                 poisoned--;
             }
-            if(inactiveTime != 0)
+            if(inactiveTime == 1)
             {
+                owner.selfBase.RandomPlaceCharacters();
                 inactiveTime--;
             }
             if(cooldown != 0)
             {
                 cooldown--;
             }
-            if(skillDuration != 0)
+            if (skillDuration == 1)
             {
+                DeactivateSkill();
                 skillDuration--;
             }
+            RestoreSteps();
+            canAttack = true;
         }
-
+        public void DeactivateSkill()
+        {
+            if (name == "Hermaeus Mora")
+                owner.canActivateTrapps = false;
+            if(name == "Mehrunes Dagon")
+                Power = basePower;
+        }
 
     }
 }
