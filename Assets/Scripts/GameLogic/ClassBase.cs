@@ -33,10 +33,7 @@ namespace ClassLibraryMazeGame
         }
         public void AddCharacterToBase(ClassCharacter character)
         {
-            if(character.owner == owner) 
-            { 
-                inactiveCharacters.Add(character);
-            }
+            inactiveCharacters.Add(character);
         }
         public bool SetBase(ClassCell destination)
         {
@@ -100,9 +97,11 @@ namespace ClassLibraryMazeGame
                 int r;
                 do
                 {
-                    r = random.Next(influenceArea.Count);
+                    r = random.Next(influenceArea.Count);                                        
                 }
-                while (influenceArea[r].character != null);
+                while (influenceArea[r].character != null && influenceArea[r].character.owner == owner);
+                if (influenceArea[r].character != null && influenceArea[r].character.owner == owner.opponent)
+                    influenceArea[r].character.Damaged(1000);
                 influenceArea[r].SetCharacter(inactiveCharacters[0]);
                 instantiateCharacterEvent.Invoke(inactiveCharacters[0]);
                 inactiveCharacters[0].ResetStats();

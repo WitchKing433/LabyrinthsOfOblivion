@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class CharacterScroll : MonoBehaviour
 {
+    public Canvas canvas;
     public GameObject activeCharacter;
     public TMP_Text characterName;
     public TMP_Text health;
@@ -17,10 +18,11 @@ public class CharacterScroll : MonoBehaviour
     public TMP_Text skillDuration;
     public GameObject actionsControll;
     public GameObject characterImage;
+    public GameObject poison;
     UnityEngine.Color color;
     void Start()
     {
-        
+       
     }
 
     void Update()
@@ -36,6 +38,14 @@ public class CharacterScroll : MonoBehaviour
             steps.text = $"Steps:{activeCharacter.GetComponent<UnityCharacter>().daedra.ValidSteps.ToString()}";
             coolDown.text = $"Cd:{activeCharacter.GetComponent<UnityCharacter>().daedra.CoolDown.ToString()}";
             skillDuration.text = $"Sd:{activeCharacter.GetComponent<UnityCharacter>().daedra.SkillDuration.ToString()}";
+            if(activeCharacter.GetComponent<UnityCharacter>().daedra.poisoned > 0)
+            {
+                poison.SetActive(true);
+            }
+            else
+            {
+                poison.SetActive(false);
+            }
 
         }
         else { this.gameObject.SetActive(false); }
@@ -71,7 +81,6 @@ public class CharacterScroll : MonoBehaviour
         else
             actionsControll.SetActive(false);
     }
-
     public void AssignColor()
     {
         if (activeCharacter.GetComponent<UnityCharacter>().daedra.Name == "Hermaeus Mora")

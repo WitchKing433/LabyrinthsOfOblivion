@@ -643,6 +643,7 @@ RectTransform:
   - {fileID: 1009359331}
   - {fileID: 677544038}
   - {fileID: 529246765}
+  - {fileID: 993904000}
   m_Father: {fileID: 1456730282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -700,6 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0d527ee1eda924bb00e1315912dd17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 847575308}
   activeCharacter: {fileID: 0}
   characterName: {fileID: 210950378}
   health: {fileID: 126551143}
@@ -709,6 +711,7 @@ MonoBehaviour:
   skillDuration: {fileID: 1009359332}
   actionsControll: {fileID: 289407597}
   characterImage: {fileID: 7206998}
+  poison: {fileID: 993903999}
 --- !u!1 &126551141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hermaeus Mora
+  m_text: Mehrunes Dagon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0965de7e8f3687b489bf4a1e2ee29ed4, type: 2}
   m_sharedMaterial: {fileID: -7579533983865990470, guid: 0965de7e8f3687b489bf4a1e2ee29ed4, type: 2}
@@ -1428,6 +1431,7 @@ MonoBehaviour:
   character1Image: {fileID: 1685993783}
   character2Image: {fileID: 1236964243}
   character3Image: {fileID: 646720463}
+  playerCharacters: []
   character1Health: {fileID: 1043645008}
   character2Health: {fileID: 1841693928}
   character3Health: {fileID: 1003844671}
@@ -1493,7 +1497,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 6201712575669567326, guid: f43825c3748e6d44d9f9e9c110aa32e1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1858,7 +1862,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 2904476842755367336, guid: 44cdf62105459c2478cba279f09e7834, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4259,7 +4263,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -9063292718089055095, guid: 0e17100e160bf4749a2592eee7c10593, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -5478,6 +5482,11 @@ MonoBehaviour:
   - {fileID: 4274717101389225741, guid: be2cd9ddcff96b44d8376ece0f92bb5e, type: 3}
   - {fileID: 3406035390609453337, guid: 34eba147a9544674584c973e99bd7050, type: 3}
   - {fileID: 5293603930982040580, guid: 0ec29fd752ab8fb409a69b3a0f2b2ec1, type: 3}
+  trappsPrefabs:
+  - {fileID: 3101437371053393604, guid: 7ccde7f81965b9e418cb5a0db08e7dc7, type: 3}
+  - {fileID: 2226188797700295928, guid: 344a00ac9b8dcb047917ac04aca55e58, type: 3}
+  - {fileID: 2293693976822676851, guid: 6b6bbc06f6503844eb9367a44f6baec5, type: 3}
+  - {fileID: 3145008175933232774, guid: 3b82e0d78050b71458bcb144b5684d09, type: 3}
   deadLandWall: {fileID: 5045715882290724985, guid: b4fe72baa6505b846b9f5621e566391c, type: 3}
   deadLandSand: {fileID: 7480452972173730708, guid: 2ccc7527dd2b76846851a8ebf9f99c18, type: 3}
   player1Scroll: {fileID: 68340256}
@@ -5486,6 +5495,7 @@ MonoBehaviour:
   player2Board: {fileID: 1382397289}
   player1Characters: []
   player2Characters: []
+  gameInfo: {fileID: 2135390258}
   daedricTower: {fileID: 7202803628799500979, guid: 51ca371711c06594ba21e6b626f68f75, type: 3}
   turnsCount: {fileID: 895057079}
   actualTurn: 1
@@ -5711,6 +5721,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847803271}
+  m_CullTransparentMesh: 1
+--- !u!1 &854314597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854314598}
+  - component: {fileID: 854314600}
+  - component: {fileID: 854314599}
+  m_Layer: 5
+  m_Name: Poisoned
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &854314598
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854314597}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1758742635}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 80.287, y: 15.063}
+  m_SizeDelta: {x: 27.775, y: 30.126}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &854314599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854314597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2e38a10800134af4cac5aed2d052a493, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &854314600
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854314597}
   m_CullTransparentMesh: 1
 --- !u!1 &866258563
 GameObject:
@@ -6390,6 +6475,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993315876}
+  m_CullTransparentMesh: 1
+--- !u!1 &993903999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993904000}
+  - component: {fileID: 993904002}
+  - component: {fileID: 993904001}
+  m_Layer: 5
+  m_Name: Poisoned
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &993904000
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993903999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 68340257}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 80.287, y: 15.063}
+  m_SizeDelta: {x: 27.775, y: 30.126}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &993904001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993903999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2e38a10800134af4cac5aed2d052a493, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &993904002
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993903999}
   m_CullTransparentMesh: 1
 --- !u!1 &995326937
 GameObject:
@@ -7143,7 +7303,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -6474085924563223427, guid: 9536e882a87fec94eb3a4cecaec43236, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -8383,6 +8543,7 @@ MonoBehaviour:
   character1Image: {fileID: 303172828}
   character2Image: {fileID: 1755806847}
   character3Image: {fileID: 1223273740}
+  playerCharacters: []
   character1Health: {fileID: 1747128797}
   character2Health: {fileID: 387334913}
   character3Health: {fileID: 539708419}
@@ -8589,7 +8750,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -5214186547206356971, guid: 20a2dbf9f53c05d4fa9f2806f54ad7e0, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -9286,7 +9447,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -3044818444978865102, guid: b38a07738f3449a4eb7c70fc07c81abe, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -10238,6 +10399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0d527ee1eda924bb00e1315912dd17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 847575308}
   activeCharacter: {fileID: 0}
   characterName: {fileID: 1641742337}
   health: {fileID: 1519076211}
@@ -10247,6 +10409,7 @@ MonoBehaviour:
   skillDuration: {fileID: 946818073}
   actionsControll: {fileID: 615113495}
   characterImage: {fileID: 557866619}
+  poison: {fileID: 854314597}
 --- !u!114 &1758742633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10305,6 +10468,7 @@ RectTransform:
   - {fileID: 946818072}
   - {fileID: 696409363}
   - {fileID: 1663033131}
+  - {fileID: 854314598}
   m_Father: {fileID: 1456730282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11620,7 +11784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Turno del segundo jugador '
+  m_text: Coloque la base del segundo jugador
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0965de7e8f3687b489bf4a1e2ee29ed4, type: 2}
   m_sharedMaterial: {fileID: -7579533983865990470, guid: 0965de7e8f3687b489bf4a1e2ee29ed4, type: 2}

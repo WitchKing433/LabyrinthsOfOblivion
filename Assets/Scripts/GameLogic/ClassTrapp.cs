@@ -9,8 +9,10 @@ namespace ClassLibraryMazeGame
     public class ClassTrapp : ClassMazeObject
     {
         public static int trappsCount = 5;
-        int trapps = 4;                                    //cambiar cuando se agreguen más trampas
+        static int trapps = 4;                                    //cambiar cuando se agreguen más trampas
         int id;
+        
+        public int Id {get { return id;}}
 
         public ClassTrapp(int i)
         {
@@ -22,20 +24,24 @@ namespace ClassLibraryMazeGame
             destination.SetMazeObject(new ClassTrapp(i));
         }
 
-        public void PlaceTrapps()
+        public static void PlaceTrapps()
         {
             for (int i = 0; i < trapps; i++)
             {
                 for(int j = trappsCount; j > 0; j--)
                 {
                     ClassCell destination = Factory.game.maze.RandomNotOcupiedCell();
+                    if(destination.character != null)
+                    {
+                        j++;
+                        continue;
+                    }
                     SetTrapp(destination, i);
                 }
             }
         }
         public void ActivateTrapp(ClassCharacter character) 
         {
-            ShowTrapp();
             switch(id)
             {
                 case 0:
@@ -52,10 +58,6 @@ namespace ClassLibraryMazeGame
                     break;
             }
         }
-        public void ShowTrapp()
-        {
-
-        }
         void ActivateTentacleTrapp(ClassCharacter character)
         {
             character.Damaged(5);
@@ -63,22 +65,25 @@ namespace ClassLibraryMazeGame
         }
         void ActivateFireTrapp() 
         {
+            if (Factory.game.maze.maze[cell.Row, cell.Column].character != null)
+                Factory.game.maze.maze[cell.Row, cell.Column].character.Damaged(10);
             int[] dirRow = new int[] { 0, 1, 0, -1 };
             int[] dirCol = new int[] { 1, 0, -1, 0 };
             for(int i = 0; i < dirRow.Length; i++)
             {
-                int iRow = cell.Row;
-                int iCol = cell.Column;
+                int iRow = cell.Row + dirRow[i];
+                int iCol = cell.Column + dirCol[i];
                 while (iRow != -1 && iRow != ClassMaze.size && iCol != -1 && iCol != ClassMaze.size && !(Factory.game.maze.maze[iRow, iCol].mazeObject is ClassWall))
-                {
+                {                    
                     if (Factory.game.maze.maze[iRow, iCol].character != null)
                         Factory.game.maze.maze[iRow, iCol].character.Damaged(10);
+                    iRow += dirRow[i];
+                    iCol += dirCol[i];
                 }
             }
         }
         void ActivateOblivionGate(ClassCharacter character)
-        {         
-            character.Teleport(Factory.game.maze.RandomNotOcupiedCell());
+        {            
         }
         void ActivatePoisonCharacter(ClassCharacter character)
         {

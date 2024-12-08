@@ -9,7 +9,7 @@ namespace ClassLibraryMazeGame
 {
     public class ClassCharacter:ClassMazeObject
     {
-        public delegate void SendToBaseEvent(ClassCharacter character);
+        public delegate void SendToBaseEvent();
         public event SendToBaseEvent sendToBaseEvent;
         public ClassPlayer owner;
         string name;
@@ -92,24 +92,26 @@ namespace ClassLibraryMazeGame
                 else { validSteps = value; }
             }
         }
-        public bool MoveTo(ClassCell destination)
+        public int MoveTo(ClassCell destination)
         {
-            if (validSteps != 0)
+            if (validSteps > 0)
             {
                 bool validRow = (destination.Row + 1 == cell.Row || destination.Row - 1 == cell.Row) && destination.Column == cell.Column;
                 bool validColumn = (destination.Column + 1 == cell.Column || destination.Column - 1 == cell.Column) && destination.Row == cell.Row;
                 if ((validColumn ^ validRow) && !(destination.mazeObject is ClassWall) && !(destination.character is ClassCharacter))
                 {
                     if (destination.mazeObject is ClassTrapp && owner.canActivateTrapps)
-                    {
-                        ((ClassTrapp)destination.mazeObject).ActivateTrapp(this);
+                    {                        
+                        Teleport(destination);
+                        validSteps--;
+                        return 2;
                     }
                     Teleport(destination);
                     validSteps--;
-                    return true;
+                    return 1;
                 }
             }
-            return false;
+            return 0;
         }
         public void Teleport(ClassCell destination)
         {
@@ -121,12 +123,12 @@ namespace ClassLibraryMazeGame
             ValidSteps = steps + modifySteps;
         }
         public void GotoBase()
-        { 
+        {
             owner.selfBase.AddCharacterToBase(this);
             this.cell.SetCharacter(null);
             this.cell = null;
             inactiveTime = 5;
-            sendToBaseEvent.Invoke(this);
+            sendToBaseEvent.Invoke();
         }
 
         public void Damaged(int h)
@@ -246,24 +248,30 @@ namespace ClassLibraryMazeGame
         }
         public void PassTurn()
         {
-            if(poisoned != 0)
+            if(poisoned > 0)
             {
                 Damaged(poisoned);
                 poisoned--;
             }
-            if(inactiveTime == 1)
+            if(inactiveTime > 0)
             {
-                owner.selfBase.RandomPlaceCharacters();
                 inactiveTime--;
+                if(inactiveTime == 0)
+                {
+                    owner.selfBase.RandomPlaceCharacters();
+                }
             }
             if(cooldown != 0)
             {
                 cooldown--;
             }
-            if (skillDuration == 1)
+            if (skillDuration > 0)
             {
-                DeactivateSkill();
                 skillDuration--;
+                if(skillDuration == 0)
+                {
+                    DeactivateSkill();
+                }
             }
             RestoreSteps();
             canAttack = true;

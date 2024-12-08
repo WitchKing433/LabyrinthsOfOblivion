@@ -60,6 +60,7 @@ public class CharacterSelector : MonoBehaviour
     {
         teamCreation.SetActive(false);
         gameSubScene.SetActive(true);
+        canvas.GetComponent<GameManager>().gameInfo.text = "Coloque la base del primer jugador";
     }
     public void AddCharacterToTeam1()
     {

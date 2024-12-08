@@ -13,6 +13,7 @@ public class PlayersBoard : MonoBehaviour
     public GameObject character1Image;
     public GameObject character2Image;
     public GameObject character3Image;
+    public List<GameObject> playerCharacters;
     public TMP_Text character1Health;
     public TMP_Text character2Health;
     public TMP_Text character3Health;
@@ -31,28 +32,20 @@ public class PlayersBoard : MonoBehaviour
     }
     public void FillBoard()
     {
-        if (owner.id == 0)
-        {
-            character1Image.GetComponent<Image>().sprite = canvas.GetComponent<GameManager>().player1Characters[0].GetComponent<Image>().sprite;
-            character2Image.GetComponent<Image>().sprite = canvas.GetComponent<GameManager>().player1Characters[1].GetComponent<Image>().sprite;
-            character3Image.GetComponent<Image>().sprite = canvas.GetComponent<GameManager>().player1Characters[2].GetComponent<Image>().sprite;
-        }
-        else
-        {
-            character1Image.GetComponent<Image>().sprite = canvas.GetComponent<GameManager>().player2Characters[0].GetComponent<Image>().sprite;
-            character2Image.GetComponent<Image>().sprite = canvas.GetComponent<GameManager>().player2Characters[1].GetComponent<Image>().sprite;
-            character3Image.GetComponent<Image>().sprite = canvas.GetComponent<GameManager>().player2Characters[2].GetComponent<Image>().sprite;
-        }
-        this.gameObject.SetActive(true);
+        
+            character1Image.GetComponent<Image>().sprite = playerCharacters[0].GetComponent<Image>().sprite;
+            character2Image.GetComponent<Image>().sprite = playerCharacters[1].GetComponent<Image>().sprite;
+            character3Image.GetComponent<Image>().sprite = playerCharacters[2].GetComponent<Image>().sprite;
+            this.gameObject.SetActive(true);
     }
 
     void Update()
     {
         if(owner != null)
         {
-            character1Health.text = $"{owner.team[0].Health}/{owner.team[0].BaseHealth}";
-            character2Health.text = $"{owner.team[1].Health}/{owner.team[1].BaseHealth}";
-            character3Health.text = $"{owner.team[2].Health}/{owner.team[2].BaseHealth}";
+            character1Health.text = $"{playerCharacters[0].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[0].GetComponent<UnityCharacter>().daedra.BaseHealth}";
+            character2Health.text = $"{playerCharacters[1].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[1].GetComponent<UnityCharacter>().daedra.BaseHealth}";
+            character3Health.text = $"{playerCharacters[2].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[2].GetComponent<UnityCharacter>().daedra.BaseHealth}";
             PlayerBaseHealth.text = $"{owner.selfBase.Health}/500";
             if (owner.asleep != 0)
             {

@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 using static UnityEditor.PlayerSettings;
 using System;
 using TMPro;
+using System.Xml.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public List<ClassCharacter> availableCharactersCopy;
     public List<GameObject> availableUnityCharacters;
     public List<GameObject> charactersPrefabs;
+    public List<GameObject> trappsPrefabs;
     public GameObject deadLandWall;
     public GameObject deadLandSand;
     public GameObject player1Scroll;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject player2Board;
     public List<GameObject> player1Characters;
     public List<GameObject> player2Characters;
+    public TMP_Text gameInfo;
     public enum ActionState { None, Move, Attack, Skill, PlaceBase1, PlaceBase2};
     public static ActionState actionState = ActionState.PlaceBase1;
     public GameObject daedricTower;
@@ -98,7 +101,14 @@ public class GameManager : MonoBehaviour
         SelectCharacter(null);
         game.turn = game.playerList[(game.turn.id + 1) % game.playerList.Count];
         actionState = ActionState.None;
-
+        if(game.turn.id == 0)
+        {
+            canvas.GetComponent<GameManager>().gameInfo.text = "Turno del primer jugador";
+        }
+        else
+        {
+            canvas.GetComponent<GameManager>().gameInfo.text = "Turno del segundo jugador";
+        }
     }
     public void SelectCharacter(GameObject character)
     {
@@ -130,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
         if (game.selectedCharacter.Attack(enemy.GetComponent<UnityCharacter>().daedra))
         {
-
+            actionState = ActionState.None;
         }
 
     }
@@ -138,23 +148,26 @@ public class GameManager : MonoBehaviour
     {
         game.playerList[0].selfBase.instantiateCharacterEvent += PlaceCharacter;
         game.playerList[1].selfBase.instantiateCharacterEvent += PlaceCharacter;
-        for(int i = 0; i < availableCharacters.Count; i++)
+        for(int i = 0; i < availableCharactersCopy.Count; i++)
         {
-            availableCharacters[i].sendToBaseEvent += SendCharacterToBase;
+            availableCharactersCopy[i].sendToBaseEvent += SendCharacterToBase;
         }
     }
-    public void SendCharacterToBase(ClassCharacter character)
+    public void SendCharacterToBase()
     {
         for (int i = 0; i < availableUnityCharacters.Count; i++)
         {
-            if (availableUnityCharacters[i].GetComponent<UnityCharacter>().daedra == character)
+            if (availableUnityCharacters[i].GetComponent<UnityCharacter>().daedra.Health == 0)
             {
                 availableUnityCharacters[i].SetActive(false);
+                actionState = ActionState.None;
+                SelectCharacter(null);
             }
         }
     }
     public void PlaceCharacter(ClassCharacter character)
     {
+        Debug.Log(character.Name);
         for(int i = 0; i < availableUnityCharacters.Count; i++)
         {
             if (availableUnityCharacters[i].GetComponent<UnityCharacter>().daedra == character)
@@ -164,6 +177,24 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    
+
+
+    public void ShowTrapps()
+    {
+        for(int i = 0;i < ClassMaze.size; i++)
+        {
+            for(int j = 0; j < ClassMaze.size; j++)
+            {
+                if(unityCells[(i, j)].GetComponent<Cell>().cell.mazeObject != null && unityCells[(i, j)].GetComponent<Cell>().cell.mazeObject is ClassTrapp)
+                    unityCells[(i,j)].GetComponent<Cell>().ShowTrapp();
+            }
+        }
+    }
+
+
+
+
     public void GameStart()
     {
         InstantiateCharacters();
@@ -171,6 +202,12 @@ public class GameManager : MonoBehaviour
         game.playerList[1].selfBase.RandomPlaceCharacters();
         game.turn = game.playerList[0];
         FillBoard();
+        ClassTrapp.PlaceTrapps();
+        ShowTrapps();
+        for (int i = 0; i < availableUnityCharacters.Count; i++)
+        {
+            availableUnityCharacters[i].transform.SetAsLastSibling();
+        }
     }
     public void InstantiateCharacters()
     {
@@ -207,6 +244,8 @@ public class GameManager : MonoBehaviour
     {
         player1Board.GetComponent<PlayersBoard>().owner = game.playerList[0];
         player2Board.GetComponent<PlayersBoard>().owner = game.playerList[1];
+        player1Board.GetComponent<PlayersBoard>().playerCharacters = player1Characters;
+        player2Board.GetComponent<PlayersBoard>().playerCharacters = player2Characters;
         player1Board.GetComponent<PlayersBoard>().FillBoard();
         player2Board.GetComponent<PlayersBoard>().FillBoard();
     }
@@ -246,7 +285,7 @@ public class GameManager : MonoBehaviour
                     cell.GetComponent<Cell>().IsClicked();
                 }
             }
-            if (game.selectedCharacter.ValidSteps == 0)
+            if (game.selectedCharacter != null && game.selectedCharacter.ValidSteps == 0)
             {
                 actionState = ActionState.None;
             }

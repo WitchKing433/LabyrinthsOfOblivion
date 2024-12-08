@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cells
+    uniqueID: 3863787643
+    locked: 0
+  - name: Trapps
+    uniqueID: 838760231
+    locked: 0
+  - name: Characters
+    uniqueID: 1035606549
+    locked: 0
