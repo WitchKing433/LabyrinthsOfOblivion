@@ -10,9 +10,11 @@ namespace ClassLibraryMazeGame
     {
         public delegate void InstantiateCharacterEvent(ClassCharacter character);
         public event InstantiateCharacterEvent instantiateCharacterEvent;
+        public delegate void GameOver();
+        public event GameOver gameOver;
         int radius;
         List<ClassCell> influenceArea;
-        ClassPlayer owner;
+        public ClassPlayer owner;
         int health;
         List<ClassCharacter> inactiveCharacters;
         public int Health {  get { return health; } }

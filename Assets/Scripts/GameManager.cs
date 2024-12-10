@@ -4,7 +4,6 @@ using UnityEngine;
 using ClassLibraryMazeGame;
 using System.Drawing;
 using JetBrains.Annotations;
-using static UnityEditor.PlayerSettings;
 using System;
 using TMPro;
 using System.Xml.Serialization;
@@ -142,13 +141,21 @@ public class GameManager : MonoBehaviour
         {
             actionState = ActionState.None;
         }
-
+    }
+    public void AttackBase(GameObject cell)
+    {
+        if (game.selectedCharacter.AttackBuilding((ClassBase)cell.GetComponent<Cell>().cell.mazeObject))
+        {
+            actionState = ActionState.None;
+        }
     }
     public void SuscribeToEvent()
     {
         game.playerList[0].selfBase.instantiateCharacterEvent += PlaceCharacter;
         game.playerList[1].selfBase.instantiateCharacterEvent += PlaceCharacter;
-        for(int i = 0; i < availableCharactersCopy.Count; i++)
+        game.playerList[0].selfBase.gameOver += GameOver;
+        game.playerList[1].selfBase.gameOver += GameOver;
+        for (int i = 0; i < availableCharactersCopy.Count; i++)
         {
             availableCharactersCopy[i].sendToBaseEvent += SendCharacterToBase;
         }
@@ -167,7 +174,6 @@ public class GameManager : MonoBehaviour
     }
     public void PlaceCharacter(ClassCharacter character)
     {
-        Debug.Log(character.Name);
         for(int i = 0; i < availableUnityCharacters.Count; i++)
         {
             if (availableUnityCharacters[i].GetComponent<UnityCharacter>().daedra == character)
@@ -177,7 +183,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+    public void ActivateSkill(GameObject character = null)
+    {
+        if (character != null)
+        {
+            game.selectedCharacter.ActivateSkill(character.GetComponent<UnityCharacter>().daedra);
+        }
+        else
+            game.selectedCharacter.ActivateSkill();
+        actionState = ActionState.None;
+        ShowTrapps();
+    }
 
 
     public void ShowTrapps()
@@ -289,10 +305,6 @@ public class GameManager : MonoBehaviour
             {
                 actionState = ActionState.None;
             }
-        }
-        if (game.playerDead)
-        {
-            GameOver();
         }
     }
 }

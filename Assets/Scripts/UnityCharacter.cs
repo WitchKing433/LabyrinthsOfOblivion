@@ -32,5 +32,10 @@ public class UnityCharacter : MonoBehaviour
         {
             canvas.GetComponent<GameManager>().AttackToMe(this.gameObject);
         }
+        if (GameManager.actionState == GameManager.ActionState.Skill)
+        {
+            canvas.GetComponent<GameManager>().ActivateSkill(this.gameObject);
+        }
+
     }
 }

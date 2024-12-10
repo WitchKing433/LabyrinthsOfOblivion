@@ -66,10 +66,15 @@ public class CharacterScroll : MonoBehaviour
     }
     public void UseSkill()
     {
-        if (GameManager.actionState != GameManager.ActionState.Skill)
-            GameManager.actionState = GameManager.ActionState.Skill;
-        else if (GameManager.actionState == GameManager.ActionState.Skill)
-            GameManager.actionState = GameManager.ActionState.None;
+        if (activeCharacter.GetComponent<UnityCharacter>().daedra.selectionSkill) 
+        {
+            if (GameManager.actionState != GameManager.ActionState.Skill)
+                GameManager.actionState = GameManager.ActionState.Skill;
+            else if (GameManager.actionState == GameManager.ActionState.Skill)
+                GameManager.actionState = GameManager.ActionState.None;
+        }
+        else 
+            canvas.GetComponent<GameManager>().ActivateSkill();
     }
     public void SetScrollCharacter(GameObject character)
     {

@@ -1,3 +1,4 @@
 Base path: 'D:/XARXES/Unity 2023.2.10f1/Editor/Data', plugins path 'D:/XARXES/Unity 2023.2.10f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
+Cmd: shutdown

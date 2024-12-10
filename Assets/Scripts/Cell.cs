@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
-using static UnityEditor.PlayerSettings;
 
 public class Cell : MonoBehaviour
 {
@@ -82,6 +81,13 @@ public class Cell : MonoBehaviour
             else if (GameManager.actionState == GameManager.ActionState.Skill)
             {
 
+            }
+            else if (GameManager.actionState == GameManager.ActionState.Attack)
+            {
+                if (cell.mazeObject is ClassBase && ((ClassBase)cell.mazeObject).owner != Factory.game.selectedCharacter.owner)
+                {
+                    canvas.GetComponent<GameManager>().AttackBase(this.gameObject);
+                }
             }
             else if (GameManager.actionState == GameManager.ActionState.None)
             {

@@ -25,6 +25,7 @@ namespace ClassLibraryMazeGame
         int inactiveTime;
         public int poisoned;
         public bool canAttack = true;
+        public bool selectionSkill;
         public ClassCharacter(string n, int h, int s, int p)
         {
             name = n;
@@ -34,6 +35,10 @@ namespace ClassLibraryMazeGame
             validSteps = s;
             basePower = p;
             power = p;
+            if (name == "Boethiah")
+            {
+                selectionSkill = true;
+            }
         }
         public int BaseHealth{ get {return baseHealth; } }
         public string Name { get { return name; } }
@@ -124,6 +129,7 @@ namespace ClassLibraryMazeGame
         }
         public void GotoBase()
         {
+            poisoned = 0;
             owner.selfBase.AddCharacterToBase(this);
             this.cell.SetCharacter(null);
             this.cell = null;
@@ -165,15 +171,17 @@ namespace ClassLibraryMazeGame
             }
             return false;
         }
-        public void AttackBuilding(ClassBase target)
+        public bool AttackBuilding(ClassBase target)
         {
             if (canAttack && Factory.game.maze.CloseCells(cell, target.cell))
             {                                            
                 target.Damaged(power);
                 canAttack = false;
+                return true;
             }
+            return false;
         }
-        public void ActivateSkill(ClassCharacter target = null)
+        public bool ActivateSkill(ClassCharacter target = null)
         {
             Random random = new Random();
             if(cooldown == 0)
@@ -182,14 +190,14 @@ namespace ClassLibraryMazeGame
                 {
                     owner.opponent.asleep += 2;                           //agregar el efecto 
                     cooldown = 7;
-                    return;
+                    return true;
                 }
                 if(name == "Hermaeus Mora")
                 {
                     owner.canActivateTrapps = false;
                     cooldown = 5;
                     skillDuration = 3;
-                    return;
+                    return true;
                 }
                 if (name == "Sheogorath")
                 {
@@ -200,14 +208,14 @@ namespace ClassLibraryMazeGame
                         owner.opponent.team[i].Power = random.Next(30);                        
                     }
                     cooldown = 7;
-                    return;
+                    return true;
                 }
                 if (name == "Mehrunes Dagon")
                 {
                     BuffPower(baseHealth - health);
                     cooldown = 5;
                     skillDuration = 3;
-                    return;
+                    return true;
                 }
                 if(name == "Peryite")
                 {
@@ -220,14 +228,18 @@ namespace ClassLibraryMazeGame
                         }
                     }          
                     cooldown = 7;
-                    return;
+                    return true;
                 }
-                if(name == "Boethiah")
+                if (name == "Boethiah")
                 {
-                    ActivateBoethiahSkill(target);
-                    return;
+                    if (target != null && target.owner == owner) 
+                    { 
+                        ActivateBoethiahSkill(target);
+                        return true;
+                    }
                 }
             }
+            return false;
         }
         void ActivateBoethiahSkill(ClassCharacter ally)
         {
@@ -279,7 +291,7 @@ namespace ClassLibraryMazeGame
         public void DeactivateSkill()
         {
             if (name == "Hermaeus Mora")
-                owner.canActivateTrapps = false;
+                owner.canActivateTrapps = true;
             if(name == "Mehrunes Dagon")
                 Power = basePower;
         }
