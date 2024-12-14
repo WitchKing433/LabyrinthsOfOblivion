@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boethiah_0: 5133020974063143181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject player2Scroll;
     public GameObject player1Board;
     public GameObject player2Board;
+    public List<GameObject> playersScrolls;
     public List<GameObject> player1Characters;
     public List<GameObject> player2Characters;
     public TMP_Text gameInfo;
@@ -34,9 +35,16 @@ public class GameManager : MonoBehaviour
     public int actualTurn = 1;
     public static int maxTurns = 30;
     public Dictionary<(int,int), GameObject> unityCells;
+    AudioSource audioSource;
+    public List<AudioClip> attackSounds = new List<AudioClip>();
+    public List<AudioClip> trappSounds = new List<AudioClip>();
+    public AudioClip buttonSound;
+    public GameObject musicManager;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        playersScrolls = new List<GameObject>() { player1Scroll, player2Scroll };        
         player1Characters = new List<GameObject> ();
         player2Characters = new List<GameObject> ();
         unityCells = new Dictionary<(int,int), GameObject>();
@@ -86,27 +94,32 @@ public class GameManager : MonoBehaviour
 
     }
     public void PassTurn()
-    {        
-        if (game.turn.id == game.playerList.Count - 1)
+    {
+        if (actionState != ActionState.PlaceBase1 && actionState != ActionState.PlaceBase1) 
         {
-            if (actualTurn == 30)
+            if (game.turn.id == game.playerList.Count - 1)
             {
-                GameOver();
+                if (actualTurn == 30)
+                {
+                    GameOver();
+                }
+                actualTurn++;
+                turnsCount.text = $"Turno:\n{actualTurn}/30";
             }
-            actualTurn++;
-            turnsCount.text = $"Turno:\n{actualTurn}/30";
-        }
-        game.turn.PassTurn();
-        SelectCharacter(null);
-        game.turn = game.playerList[(game.turn.id + 1) % game.playerList.Count];
-        actionState = ActionState.None;
-        if(game.turn.id == 0)
-        {
-            canvas.GetComponent<GameManager>().gameInfo.text = "Turno del primer jugador";
-        }
-        else
-        {
-            canvas.GetComponent<GameManager>().gameInfo.text = "Turno del segundo jugador";
+            game.turn.PassTurn();
+            SelectCharacter(null);
+            game.turn = game.playerList[(game.turn.id + 1) % game.playerList.Count];
+            actionState = ActionState.None;
+            if (game.turn.id == 0)
+            {
+                canvas.GetComponent<GameManager>().gameInfo.text = "Turno del primer jugador";
+            }
+            else
+            {
+                canvas.GetComponent<GameManager>().gameInfo.text = "Turno del segundo jugador";
+            }
+            if(game.turn.asleep > 0)
+                PassTurn();
         }
     }
     public void SelectCharacter(GameObject character)
@@ -140,7 +153,21 @@ public class GameManager : MonoBehaviour
         if (game.selectedCharacter.Attack(enemy.GetComponent<UnityCharacter>().daedra))
         {
             actionState = ActionState.None;
+            PlayAttackSound();
         }
+    }
+    public void PlayAttackSound()
+    {
+        audioSource.volume = 1f;
+        System.Random random = new System.Random();
+        audioSource.clip = attackSounds[random.Next(attackSounds.Count)];
+        audioSource.Play();
+    }
+    public void PlayTrappSound(int id)
+    {
+        audioSource.volume = 1f;
+        audioSource.clip = trappSounds[id];
+        audioSource.Play();
     }
     public void AttackBase(GameObject cell)
     {
@@ -185,13 +212,18 @@ public class GameManager : MonoBehaviour
     }
     public void ActivateSkill(GameObject character = null)
     {
+        bool playSound;
         if (character != null)
         {
-            game.selectedCharacter.ActivateSkill(character.GetComponent<UnityCharacter>().daedra);
+            playSound = game.selectedCharacter.ActivateSkill(character.GetComponent<UnityCharacter>().daedra);
         }
         else
-            game.selectedCharacter.ActivateSkill();
+            playSound = game.selectedCharacter.ActivateSkill();
         actionState = ActionState.None;
+        if (playSound)
+        {
+            playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.GetComponent<AudioSource>().Play();
+        }
         ShowTrapps();
     }
 
@@ -213,6 +245,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        musicManager.GetComponent<MusicManager>().StartCombatMusic();
         InstantiateCharacters();
         game.playerList[0].selfBase.RandomPlaceCharacters();
         game.playerList[1].selfBase.RandomPlaceCharacters();
@@ -265,6 +298,12 @@ public class GameManager : MonoBehaviour
         player1Board.GetComponent<PlayersBoard>().FillBoard();
         player2Board.GetComponent<PlayersBoard>().FillBoard();
     }
+    public void ButtonSound()
+    {
+        audioSource.volume = 0.1f;
+        audioSource.clip = buttonSound; 
+        audioSource.Play();
+    }
     void Update()
     {
         if (actionState == ActionState.Move)
@@ -291,6 +330,10 @@ public class GameManager : MonoBehaviour
                 {
                     GameObject cell = unityCells[(game.selectedCharacter.cell.Row, game.selectedCharacter.cell.Column + 1 )];
                     cell.GetComponent<Cell>().IsClicked();
+                    Vector3 localScale = playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale;
+                    localScale.x = -1;
+                    playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale = localScale;
+
                 }
             }
             if (Input.GetKeyDown(KeyCode.A))
@@ -299,6 +342,9 @@ public class GameManager : MonoBehaviour
                 {
                     GameObject cell = unityCells[( game.selectedCharacter.cell.Row, game.selectedCharacter.cell.Column - 1 )];
                     cell.GetComponent<Cell>().IsClicked();
+                    Vector3 localScale = playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale;
+                    localScale.x = 1;
+                    playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale = localScale;
                 }
             }
             if (game.selectedCharacter != null && game.selectedCharacter.ValidSteps == 0)

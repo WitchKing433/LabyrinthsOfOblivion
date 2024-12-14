@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sheogorath_0: -4325093487130010655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

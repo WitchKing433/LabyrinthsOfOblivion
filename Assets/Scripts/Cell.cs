@@ -60,6 +60,7 @@ public class Cell : MonoBehaviour
                     if(movement == 2)
                     {
                         ((ClassTrapp)cell.mazeObject).ActivateTrapp(cell.character);
+                        canvas.GetComponent<GameManager>().PlayTrappSound(((ClassTrapp)cell.mazeObject).Id);
                         if (((ClassTrapp)cell.mazeObject).Id == 2)
                         {
                             if (Factory.game.turn.id == 0)

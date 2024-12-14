@@ -32,7 +32,7 @@ namespace ClassLibraryMazeGame
             {
                 team[i].PassTurn();
             }
-            if(asleep != 0)
+            if(asleep > 0)
                 asleep--;
             selfBase.RandomPlaceCharacters();
         }
