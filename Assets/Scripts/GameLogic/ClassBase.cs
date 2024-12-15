@@ -13,7 +13,7 @@ namespace ClassLibraryMazeGame
         public delegate void GameOver();
         public event GameOver gameOver;
         int radius;
-        List<ClassCell> influenceArea;
+        public List<ClassCell> influenceArea;
         public ClassPlayer owner;
         int health;
         List<ClassCharacter> inactiveCharacters;
@@ -31,6 +31,7 @@ namespace ClassLibraryMazeGame
             if (health <= 0)
             {
                 Factory.game.playerDead = true;
+                gameOver.Invoke();
             } 
         }
         public void AddCharacterToBase(ClassCharacter character)

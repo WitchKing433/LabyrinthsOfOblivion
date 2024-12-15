@@ -69,7 +69,9 @@
     <Compile Include="Assets\Scripts\PlayersBoard.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassPlayer.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\EndSceneManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassCell.cs" />
+    <Compile Include="Assets\Scripts\Animation.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassBase.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\CharacterScroll.cs" />

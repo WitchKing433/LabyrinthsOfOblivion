@@ -12,6 +12,8 @@ namespace ClassLibraryMazeGame
     }
     public class ClassMazeLogic
     {
+        public delegate void InstantiateFireEvent(ClassCell cell);
+        public event InstantiateFireEvent instantiateFireEvent;
         public ClassMaze maze = new ClassMaze();
         public List<ClassPlayer> playerList;
         public ClassPlayer turn;
@@ -24,6 +26,11 @@ namespace ClassLibraryMazeGame
             maze.Init();
             playerList = new List<ClassPlayer>();
         }
+        public void InstantiateFire(ClassCell cell)
+        {
+            instantiateFireEvent.Invoke(cell);
+        }
+
 
         public void SelectCharacter(ClassCharacter character)
         {

@@ -4,15 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using static UnityEditor.PlayerSettings;
 
 public class Cell : MonoBehaviour
 {
     public Canvas canvas;
     public ClassCell cell;
     public GameObject daedricTower;
+    public GameObject fire;
 
     void Start()
     {
+        Factory.game.instantiateFireEvent += InstantiateFire;
         canvas = FindFirstObjectByType<Canvas>();
            
     }
@@ -102,6 +105,13 @@ public class Cell : MonoBehaviour
 
         }
     }
+    public void InstantiateFire(ClassCell destination)
+    {
+        if (cell == destination)
+        {
+            Instantiate(fire, this.transform.position, Quaternion.identity, canvas.transform);
+        }
+    }
     public void TpToMe()
     {
         if (Factory.game.turn.id == 0)
@@ -134,7 +144,7 @@ public class Cell : MonoBehaviour
     public void SetBase(float x, float y, ClassCell destination, int p)
     {
         Vector3 pos = new Vector3(x, y, 0);
-        GameObject tower = Instantiate(daedricTower, pos, Quaternion.identity, Object.FindFirstObjectByType<Canvas>().transform);
+        GameObject tower = Instantiate(daedricTower, pos, Quaternion.identity, Object.FindFirstObjectByType<Canvas>().GetComponent<GameManager>().gameParent.transform);
         tower.GetComponent<Cell>().cell = destination;
         Factory.game.playerList[p].selfBase.SetBase(destination);
     }

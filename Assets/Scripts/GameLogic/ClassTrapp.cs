@@ -31,7 +31,7 @@ namespace ClassLibraryMazeGame
                 for(int j = trappsCount; j > 0; j--)
                 {
                     ClassCell destination = Factory.game.maze.RandomNotOcupiedCell();
-                    if(destination.character != null)
+                    if(destination.character != null || Factory.game.playerList[0].selfBase.influenceArea.Contains(destination) || Factory.game.playerList[1].selfBase.influenceArea.Contains(destination))
                     {
                         j++;
                         continue;
@@ -67,6 +67,7 @@ namespace ClassLibraryMazeGame
         {
             if (Factory.game.maze.maze[cell.Row, cell.Column].character != null)
                 Factory.game.maze.maze[cell.Row, cell.Column].character.Damaged(10);
+            Factory.game.InstantiateFire(cell);
             int[] dirRow = new int[] { 0, 1, 0, -1 };
             int[] dirCol = new int[] { 1, 0, -1, 0 };
             for(int i = 0; i < dirRow.Length; i++)
@@ -77,6 +78,7 @@ namespace ClassLibraryMazeGame
                 {                    
                     if (Factory.game.maze.maze[iRow, iCol].character != null)
                         Factory.game.maze.maze[iRow, iCol].character.Damaged(10);
+                    Factory.game.InstantiateFire(Factory.game.maze.maze[iRow, iCol]);
                     iRow += dirRow[i];
                     iCol += dirCol[i];
                 }

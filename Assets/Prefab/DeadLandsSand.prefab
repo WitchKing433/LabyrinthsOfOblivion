@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 5581727691800257357, guid: 3825e6785312e5a45bb198577d31c127, type: 3}
   daedricTower: {fileID: 7202803628799500979, guid: 51ca371711c06594ba21e6b626f68f75, type: 3}
+  fire: {fileID: 1630326575572593797, guid: cc2f5461491e0974a8ceb6e938698ae7, type: 3}
 --- !u!114 &-8607803347503192080
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -126,7 +126,13 @@ MonoBehaviour:
     m_Height: 1023
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []
-    m_LigatureSubstitutionRecords: []
+    m_LigatureSubstitutionRecords:
+    - m_ComponentGlyphIDs: 14000000d800000015000000
+      m_LigatureGlyphID: 125
+    - m_ComponentGlyphIDs: 14000000d800000017000000
+      m_LigatureGlyphID: 124
+    - m_ComponentGlyphIDs: 16000000d800000017000000
+      m_LigatureGlyphID: 126
     m_GlyphPairAdjustmentRecords: []
     m_MarkToBaseAdjustmentRecords: []
     m_MarkToMarkAdjustmentRecords: []
