@@ -1,0 +1,514 @@
+fileFormatVersion: 2
+guid: e9191dfbe09c75e4bbfa2d70c096b838
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2100402496940862750
+    second: Necromancer_spell_7_frame_7_0
+  - first:
+      213: 6319165746885941827
+    second: Necromancer_spell_7_frame_7_1
+  - first:
+      213: 1457602750915761850
+    second: Necromancer_spell_7_frame_7_2
+  - first:
+      213: -8375938510593539540
+    second: Necromancer_spell_7_frame_7_3
+  - first:
+      213: 1777841051060377463
+    second: Necromancer_spell_7_frame_7_4
+  - first:
+      213: -8933071393493445863
+    second: Necromancer_spell_7_frame_7_5
+  - first:
+      213: 4412335052848405503
+    second: Necromancer_spell_7_frame_7_6
+  - first:
+      213: -1164160563827743862
+    second: Necromancer_spell_7_frame_7_7
+  - first:
+      213: 1276402365967777105
+    second: Necromancer_spell_7_frame_7_8
+  - first:
+      213: 5687219157736524429
+    second: Necromancer_spell_7_frame_7_9
+  - first:
+      213: 4018200249883938744
+    second: Necromancer_spell_7_frame_7_10
+  - first:
+      213: 9190506641091366312
+    second: Necromancer_spell_7_frame_7_11
+  - first:
+      213: -967060996550577745
+    second: Necromancer_spell_7_frame_7_12
+  - first:
+      213: -8223902276255059437
+    second: Necromancer_spell_7_frame_7_13
+  - first:
+      213: 5204451068711764251
+    second: Necromancer_spell_7_frame_7_14
+  - first:
+      213: 500137866593998513
+    second: Necromancer_spell_7_frame_7_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 114
+        width: 51
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e21f74be0fd9d2e0800000000000000
+      internalID: -2100402496940862750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 92
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ad3f334cf22b750800000000000000
+      internalID: 6319165746885941827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 108
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab657ffaaf17a3410800000000000000
+      internalID: 1457602750915761850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 94
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c22ce8f5d40b2cb80800000000000000
+      internalID: -8375938510593539540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 69
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7779f8b34092ca810800000000000000
+      internalID: 1777841051060377463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_5
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 84
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9139e95a5ea570480800000000000000
+      internalID: -8933071393493445863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_6
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 98
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb980f5a53cb3d30800000000000000
+      internalID: 4412335052848405503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_7
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 90
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a83678b922218dfe0800000000000000
+      internalID: -1164160563827743862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 72
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d3afd6031b6b110800000000000000
+      internalID: 1276402365967777105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 73
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a8ea811bf0dee40800000000000000
+      internalID: 5687219157736524429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 26
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfc7b286d383c730800000000000000
+      internalID: 4018200249883938744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_11
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 35
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ad8e10c81d3b8f70800000000000000
+      internalID: 9190506641091366312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_12
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 45
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1b778b52f4492f0800000000000000
+      internalID: -967060996550577745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_13
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 32
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3127a4ca374dedd80800000000000000
+      internalID: -8223902276255059437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_14
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1187713cace93840800000000000000
+      internalID: 5204451068711764251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Necromancer_spell_7_frame_7_15
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b69e056db8d0f600800000000000000
+      internalID: 500137866593998513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Necromancer_spell_7_frame_7_0: -2100402496940862750
+      Necromancer_spell_7_frame_7_1: 6319165746885941827
+      Necromancer_spell_7_frame_7_10: 4018200249883938744
+      Necromancer_spell_7_frame_7_11: 9190506641091366312
+      Necromancer_spell_7_frame_7_12: -967060996550577745
+      Necromancer_spell_7_frame_7_13: -8223902276255059437
+      Necromancer_spell_7_frame_7_14: 5204451068711764251
+      Necromancer_spell_7_frame_7_15: 500137866593998513
+      Necromancer_spell_7_frame_7_2: 1457602750915761850
+      Necromancer_spell_7_frame_7_3: -8375938510593539540
+      Necromancer_spell_7_frame_7_4: 1777841051060377463
+      Necromancer_spell_7_frame_7_5: -8933071393493445863
+      Necromancer_spell_7_frame_7_6: 4412335052848405503
+      Necromancer_spell_7_frame_7_7: -1164160563827743862
+      Necromancer_spell_7_frame_7_8: 1276402365967777105
+      Necromancer_spell_7_frame_7_9: 5687219157736524429
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

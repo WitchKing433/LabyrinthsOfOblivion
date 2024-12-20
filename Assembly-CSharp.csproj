@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameLogic\ClassTrapp.cs" />
+    <Compile Include="Assets\Scripts\MyAnimation.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassMazeLogic.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassWall.cs" />
     <Compile Include="Assets\Scripts\CharacterSelector.cs" />
@@ -71,14 +72,13 @@
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\Scripts\EndSceneManager.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassCell.cs" />
-    <Compile Include="Assets\Scripts\Animation.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassBase.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\CharacterScroll.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassCharacter.cs" />
     <Compile Include="Assets\Scripts\GameLogic\ClassMaze.cs" />
+    <Compile Include="Assets\Scripts\MyAnimationDiffSizes.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
-    <Compile Include="Assets\Scripts\UnityTrapps.cs" />
     <Compile Include="Assets\Scripts\UnityCharacter.cs" />
   </ItemGroup>
   <ItemGroup>

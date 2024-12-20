@@ -1,0 +1,639 @@
+Using pre-set license
+Built from '2023.2/release' branch; Version is '2023.2.10f1 (316c1fd686f6) revision 3238943'; Using compiler version '193431935'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit CoreSingleLanguage' Language: 'es' Physical Memory: 32610 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\XARXES\Unity 2023.2.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+D:/XARXES/Programación/LabyrinthsOfOblivion
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+49735
+-job-worker-count
+5
+-background-job-worker-count
+8
+-asset-garbage-collectors
+1
+Successfully changed project path to: D:/XARXES/Programación/LabyrinthsOfOblivion
+D:/XARXES/Programación/LabyrinthsOfOblivion
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [13688] Host "[IP] 0.0.0.0 [Port] 0 [Flags] 2 [Guid] 778117208 [EditorId] 778117208 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-VFD1MGT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [13688] Host "[IP] 0.0.0.0 [Port] 0 [Flags] 2 [Guid] 778117208 [EditorId] 778117208 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-VFD1MGT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+[Physics::Module] Initialized MultithreadedJobDispatcher with 5 workers.
+Library Redirect Path: Library/
+Refreshing native plugins compatible for Editor in 1.29 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2023.2.10f1 (316c1fd686f6)
+[Subsystems] Discovering subsystems at path D:/XARXES/Unity 2023.2.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/XARXES/Programación/LabyrinthsOfOblivion/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
+    Vendor:   NVIDIA
+    VRAM:     6031 MB
+    Driver:   32.0.15.6590
+Initialize mono
+Mono path[0] = 'D:/XARXES/Unity 2023.2.10f1/Editor/Data/Managed'
+Mono path[1] = 'D:/XARXES/Unity 2023.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/XARXES/Unity 2023.2.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56572
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/XARXES/Unity 2023.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002020 seconds.
+- Loaded All Assemblies, in  0.465 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.386 seconds
+Domain Reload Profiling: 851ms
+	BeginReloadAssembly (150ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (55ms)
+	LoadAllAssembliesAndSetupDomain (197ms)
+		LoadAssemblies (149ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (195ms)
+			TypeCache.Refresh (193ms)
+				TypeCache.ScanAssembly (178ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (387ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (322ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (7ms)
+			ProcessInitializeOnLoadAttributes (248ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.936 seconds
+Refreshing native plugins compatible for Editor in 0.87 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.731 seconds
+Domain Reload Profiling: 1666ms
+	BeginReloadAssembly (387ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (445ms)
+		LoadAssemblies (335ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (220ms)
+			TypeCache.Refresh (177ms)
+				TypeCache.ScanAssembly (159ms)
+			BuildScriptInfoCaches (34ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (732ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (496ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (48ms)
+			ProcessInitializeOnLoadAttributes (404ms)
+			ProcessInitializeOnLoadMethodAttributes (36ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 27 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4136 unused Assets / (1.1 MB). Loaded Objects now: 4712.
+Memory consumption went from 126.2 MB to 125.1 MB.
+Total: 6.261800 ms (FindLiveObjects: 0.492000 ms CreateObjectMapping: 0.475800 ms MarkObjects: 4.177000 ms  DeleteObjects: 1.116100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1996.951550 seconds.
+  path: Assets/Images/Animations/Attacks/IceSpikes/FrostMage_skill_4_frame_1.png
+  artifactKey: Guid(e03d630da2ae0284ab81ce42bc507722) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/IceSpikes/FrostMage_skill_4_frame_1.png using Guid(e03d630da2ae0284ab81ce42bc507722) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9b8cce00be890246fbad20226070da5a') in 0.1272269 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 33.201828 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash
+  artifactKey: Guid(1d4f92b8a9bd81d4fbd577861a09d7bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash using Guid(1d4f92b8a9bd81d4fbd577861a09d7bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ea61285142fb8127cd10a301a3b44b33') in 0.0035112 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.059461 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame1.png
+  artifactKey: Guid(bd36729e2ac34944b93a689f6cd59804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame1.png using Guid(bd36729e2ac34944b93a689f6cd59804) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2365ca885acdec25520c4e06d5f19f98') in 0.0182574 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002811 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame4.png
+  artifactKey: Guid(916d9566163a53a49b0206c1533d4def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame4.png using Guid(916d9566163a53a49b0206c1533d4def) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec06ec816e6ec6e19a4a34ca2e749a61') in 0.0317378 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame7.png
+  artifactKey: Guid(6edc27c688e9d9a40a033e57ad4d845e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame7.png using Guid(6edc27c688e9d9a40a033e57ad4d845e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a62b02173b6a714986b423ae1726de9') in 0.0266363 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.003213 seconds.
+  path: Assets/Images/Animations/Attacks/LightningStrike
+  artifactKey: Guid(b5aa2dcbaa4fe5a44a5199b849137c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/LightningStrike using Guid(b5aa2dcbaa4fe5a44a5199b849137c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0c3e6f00c7271ff543534ef664907c8') in 0.0006607 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.068619 seconds.
+  path: Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame1.png
+  artifactKey: Guid(6baf3e859296dec4796630aa71d0344a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame1.png using Guid(6baf3e859296dec4796630aa71d0344a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '04ea9d034a9fd69c7f9508709d659fe9') in 0.0185688 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.042253 seconds.
+  path: Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame2.png
+  artifactKey: Guid(a28780722afd61c4b820fe49537125c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame2.png using Guid(a28780722afd61c4b820fe49537125c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23b77e98fc5cffab40d2abea4f35be60') in 0.0143635 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001989 seconds.
+  path: Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame4.png
+  artifactKey: Guid(24a39b2a223b5b34c82c023055f22e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame4.png using Guid(24a39b2a223b5b34c82c023055f22e39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bef9bf49b8ce00c50b3f8650f6a8c113') in 0.0174102 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.560102 seconds.
+  path: Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame1.png
+  artifactKey: Guid(6baf3e859296dec4796630aa71d0344a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame1.png using Guid(6baf3e859296dec4796630aa71d0344a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '085d5e02e4852af36a52cc9d82a43d08') in 0.0210632 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame5.png
+  artifactKey: Guid(7a9e03974d2e3c148b6b2d093414deb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/LightningStrike/lightning_skill3_frame5.png using Guid(7a9e03974d2e3c148b6b2d093414deb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cf13589b02ef69ebc221177ca4384367') in 0.018262 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.003109 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack
+  artifactKey: Guid(1749a7cedb01cbf4e889232f961f3166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack using Guid(1749a7cedb01cbf4e889232f961f3166) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e075a2b5863bbd0c2d92df0ffaeccec3') in 0.02303 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.044418 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_1.png
+  artifactKey: Guid(eac74c06ee9ab0e4eaad610597b5186b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_1.png using Guid(eac74c06ee9ab0e4eaad610597b5186b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '807227a62d21db4bec4601343f89d697') in 0.0134772 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001355 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_3.png
+  artifactKey: Guid(5356b314c6b2f5a43947303bb1a285ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_3.png using Guid(5356b314c6b2f5a43947303bb1a285ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd5d58af6c0bb579359208db8b0a3e326') in 0.0150653 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007453 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_6.png
+  artifactKey: Guid(fd568209c0bcb494e9ea9bc73b7ce5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_6.png using Guid(fd568209c0bcb494e9ea9bc73b7ce5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f108bb7dd38d2a14b1cea7f83b90f14') in 0.016799 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.520653 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_1.png
+  artifactKey: Guid(eac74c06ee9ab0e4eaad610597b5186b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_1.png using Guid(eac74c06ee9ab0e4eaad610597b5186b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '559df5a1d0bdfbc894b8edb35659c76b') in 0.0386479 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000118 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_5.png
+  artifactKey: Guid(fe7b996665c880a4b8bc25237ec8721a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_5.png using Guid(fe7b996665c880a4b8bc25237ec8721a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd9e77160f4430e5617d4434e874fb9ca') in 0.0189399 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_8.png
+  artifactKey: Guid(b42a9503920793e4aa179bcb6df22ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/NecroAttack/Necromancer_spell_7_frame_8.png using Guid(b42a9503920793e4aa179bcb6df22ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '195ce53311d049c75a1a8e2f3d5038fd') in 0.0169146 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.495451 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame1.png
+  artifactKey: Guid(bd36729e2ac34944b93a689f6cd59804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame1.png using Guid(bd36729e2ac34944b93a689f6cd59804) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce135346737f16050badc2f31fdf1585') in 0.0329694 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame4.png
+  artifactKey: Guid(916d9566163a53a49b0206c1533d4def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame4.png using Guid(916d9566163a53a49b0206c1533d4def) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1813ed9b801ca27debce85ce9aa96095') in 0.0396268 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000142 seconds.
+  path: Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame7.png
+  artifactKey: Guid(6edc27c688e9d9a40a033e57ad4d845e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/OrangeSlash/Halloween_skill1_frame7.png using Guid(6edc27c688e9d9a40a033e57ad4d845e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'add50d63fba7534b7016abad42b7aaa0') in 0.0239171 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.132959 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike
+  artifactKey: Guid(717d7afa9c7678846965b7a0fc6126ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike using Guid(717d7afa9c7678846965b7a0fc6126ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '97bafc4a2ff406199201b6768de16c98') in 0.0006534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.050636 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame1.png
+  artifactKey: Guid(1a30161f49dd1be40a7b594ca63c5b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame1.png using Guid(1a30161f49dd1be40a7b594ca63c5b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '514e0ceff20de7f572795dd437f8cd00') in 0.0145487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000725 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame3.png
+  artifactKey: Guid(dadee32cdad6b6e448268f887e35278a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame3.png using Guid(dadee32cdad6b6e448268f887e35278a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3acd210d2d5f9edcf9d80e6b2ddb7917') in 0.0133901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002423 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame5.png
+  artifactKey: Guid(4bd6a29c8e467374090d02e9fa4d1943) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame5.png using Guid(4bd6a29c8e467374090d02e9fa4d1943) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83e777ab9d865aef1ae2a9649ded172c') in 0.0184563 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004902 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame8.png
+  artifactKey: Guid(fd53ec12bb52445438b3cc7e0ae688a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame8.png using Guid(fd53ec12bb52445438b3cc7e0ae688a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6fa52c0c1a5fdbe18f98b4ddc6d95b88') in 0.0550188 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.556910 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame1.png
+  artifactKey: Guid(1a30161f49dd1be40a7b594ca63c5b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame1.png using Guid(1a30161f49dd1be40a7b594ca63c5b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f9ffee1f8217ebd0973a4da62007523') in 0.0438578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame9.png
+  artifactKey: Guid(14eb89bf7347a504289177bd412172d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame9.png using Guid(14eb89bf7347a504289177bd412172d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7362aa4de992ff5722a6db33466d0e42') in 0.0206762 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame6.png
+  artifactKey: Guid(67fe3d61dd6ed7f42810afd59b62c41e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/PumpkinStrike/Halloween_skill6_frame6.png using Guid(67fe3d61dd6ed7f42810afd59b62c41e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '944852d8123016bb3187cbee76f3d736') in 0.0198584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 96.328535 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1
+  artifactKey: Guid(952e20c20cfdbe1429793cf50993bde6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1 using Guid(952e20c20cfdbe1429793cf50993bde6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '418bf4a67c6c1fa2b303140b18d3020c') in 0.0005745 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.030411 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1
+  artifactKey: Guid(1435388e849a3784984cbf91663fc635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1 using Guid(1435388e849a3784984cbf91663fc635) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b04e642097da1261d53320945ed50d0') in 0.0031883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.994808 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames
+  artifactKey: Guid(8d4fe118b6ad00d45b2c0b3cd1e70ebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames using Guid(8d4fe118b6ad00d45b2c0b3cd1e70ebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b90cb99053fd5fed8d9b9f50e24cf170') in 0.0005794 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.079900 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame1.png
+  artifactKey: Guid(a3573e02445c7d040b9aaa8385b132aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame1.png using Guid(a3573e02445c7d040b9aaa8385b132aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7dac433dc4d8fdc1dba68a64b899199') in 0.0184175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame3.png
+  artifactKey: Guid(6a7a9c76543d9a44a9b0702ef9f7a318) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame3.png using Guid(6a7a9c76543d9a44a9b0702ef9f7a318) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f6dcf074a2c9eb2cb103b992f7d4f32f') in 0.0132692 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000101 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame5.png
+  artifactKey: Guid(69028cab712c5b2439595dbead78dfeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame5.png using Guid(69028cab712c5b2439595dbead78dfeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3c35288d7a22565cd2e82522621f3bd') in 0.0151228 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000125 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame7.png
+  artifactKey: Guid(ca437321fd7a7624599abe9579684b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame7.png using Guid(ca437321fd7a7624599abe9579684b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7267e6d58bd4e5f35bb896a510a9abf7') in 0.0135052 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame9.png
+  artifactKey: Guid(b7c3e6d13051f16498d3e37a831b8912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame9.png using Guid(b7c3e6d13051f16498d3e37a831b8912) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f04aa1b9f2be515ef2380074f40c7e58') in 0.017793 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.077684 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame1.png
+  artifactKey: Guid(a3573e02445c7d040b9aaa8385b132aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame1.png using Guid(a3573e02445c7d040b9aaa8385b132aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eeca8062c46362e190e3ad090d7e8cbb') in 0.0196506 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame7.png
+  artifactKey: Guid(ca437321fd7a7624599abe9579684b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame7.png using Guid(ca437321fd7a7624599abe9579684b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1338e7113fa34446bf61931b2f909bda') in 0.0446689 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame4.png
+  artifactKey: Guid(fa606e80f254e494c9862d71c8642b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame4.png using Guid(fa606e80f254e494c9862d71c8642b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3fe3eed50821075edc951ed2011e92d1') in 0.0184578 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame6.png
+  artifactKey: Guid(3ed5e73ce79356848b764e186db5e61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color1/Frames/Slash_color1_frame6.png using Guid(3ed5e73ce79356848b764e186db5e61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7acededa2e595ba7f633ac92f19cda7a') in 0.0219649 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.343876 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2
+  artifactKey: Guid(02e62554ecc8abd49b811ea0da5c9fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2 using Guid(02e62554ecc8abd49b811ea0da5c9fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4fb826df4d5f734ef28f804999b41f0') in 0.0005566 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.955529 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames
+  artifactKey: Guid(778f57f4ffcac62418b96f0808c58396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames using Guid(778f57f4ffcac62418b96f0808c58396) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23aa44a1b0ccf5292eceaba0dc7b9bed') in 0.0032062 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.842232 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame1.png
+  artifactKey: Guid(fe9010ab6f3348d47bddc119cfec13e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame1.png using Guid(fe9010ab6f3348d47bddc119cfec13e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '142bbe5174aa282588dae8d32afa58e3') in 0.0137274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001432 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame3.png
+  artifactKey: Guid(66f9bba3819428443a6504f418293cb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame3.png using Guid(66f9bba3819428443a6504f418293cb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34e2c6b6d67f279bec6ea0ebaa84e886') in 0.0134984 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005094 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame5.png
+  artifactKey: Guid(9691edeb14d4f2b48be77c3ef55e0f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame5.png using Guid(9691edeb14d4f2b48be77c3ef55e0f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e3d86de7f90273c674a71a7d968531e') in 0.0146963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006411 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame8.png
+  artifactKey: Guid(25c2b2d0a720bde4d89a92fbbe1d00b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame8.png using Guid(25c2b2d0a720bde4d89a92fbbe1d00b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddd81668e30a94517c09c103e464998d') in 0.0158151 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.145378 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame1.png
+  artifactKey: Guid(fe9010ab6f3348d47bddc119cfec13e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame1.png using Guid(fe9010ab6f3348d47bddc119cfec13e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '11e1c8c22ad71325ff5cb348bbb1fc45') in 0.0459085 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame6.png
+  artifactKey: Guid(cecba33fc8f416047923b5a7970e613f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame6.png using Guid(cecba33fc8f416047923b5a7970e613f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '62daf281f1b46c418bcb17df7fd00c07') in 0.0242457 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame5.png
+  artifactKey: Guid(9691edeb14d4f2b48be77c3ef55e0f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color2/Frames/Slash_color2_frame5.png using Guid(9691edeb14d4f2b48be77c3ef55e0f9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f31f826504f1ed430c172720f1e6d06e') in 0.0241826 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.500268 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3
+  artifactKey: Guid(04efdacc147b56c4cb5ff63327d8d0f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3 using Guid(04efdacc147b56c4cb5ff63327d8d0f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd7429f86a6117368004355b41db52f55') in 0.0005669 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.819058 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames
+  artifactKey: Guid(f485f11422d437d45be93ef6a65cb58b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames using Guid(f485f11422d437d45be93ef6a65cb58b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de29ecabda596f7811e86bfd2222eaf3') in 0.0248661 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.038529 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame1.png
+  artifactKey: Guid(8eef45f281aef9d449d26054215de413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame1.png using Guid(8eef45f281aef9d449d26054215de413) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc00ed408573e7c5b74444f40cc74e9b') in 0.0155512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007221 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame4.png
+  artifactKey: Guid(09afac9b8b649d24683ffe3083a9dcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame4.png using Guid(09afac9b8b649d24683ffe3083a9dcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cac28c53e8a497dac843c2c146c48d42') in 0.0176023 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007262 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame7.png
+  artifactKey: Guid(4a686b9eacb960240b3f8a61e1e99a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame7.png using Guid(4a686b9eacb960240b3f8a61e1e99a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0af6992c668ae18122237ec3e90f12d5') in 0.0166109 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.501860 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame1.png
+  artifactKey: Guid(8eef45f281aef9d449d26054215de413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame1.png using Guid(8eef45f281aef9d449d26054215de413) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '951ecccbe6deaa602cb3beb34dad2838') in 0.0424802 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000127 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame4.png
+  artifactKey: Guid(09afac9b8b649d24683ffe3083a9dcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame4.png using Guid(09afac9b8b649d24683ffe3083a9dcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '66849653952fd74fa141b513cef9cd2a') in 0.0211853 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000097 seconds.
+  path: Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame7.png
+  artifactKey: Guid(4a686b9eacb960240b3f8a61e1e99a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Animations/Attacks/Slash 1/color3/Frames/Slash_color3_frame7.png using Guid(4a686b9eacb960240b3f8a61e1e99a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9e73973b2e2544a0c9d1c2e281327e3e') in 0.0225659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

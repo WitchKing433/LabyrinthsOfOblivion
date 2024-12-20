@@ -6239,6 +6239,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e8309667e4ca1b94ea309d007ea2212e, type: 3}
   - {fileID: 8300000, guid: cdf4f09939ede974787265561355bd06, type: 3}
   buttonSound: {fileID: 8300000, guid: 3a351dd48e8da754baaa31aec6bbec10, type: 3}
+  attackBase: {fileID: 8300000, guid: 9bc893a556d09e84fa3b29c7a0016a29, type: 3}
   musicManager: {fileID: 1221323375}
   endScene: {fileID: 2072853}
 --- !u!223 &847575308

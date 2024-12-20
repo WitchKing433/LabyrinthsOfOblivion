@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 using System;
 using TMPro;
 using System.Xml.Serialization;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     public List<AudioClip> attackSounds = new List<AudioClip>();
     public List<AudioClip> trappSounds = new List<AudioClip>();
     public AudioClip buttonSound;
+    public AudioClip attackBase;
     public GameObject musicManager;
     public GameObject endScene;
 
@@ -85,8 +87,8 @@ public class GameManager : MonoBehaviour
                 
             }
         }     
-        game.AddPlayer(0, 5, 1);
-        game.AddPlayer(1, 10, 1);
+        game.AddPlayer(0, 500, 1);
+        game.AddPlayer(1, 500, 1);
         game.playerList[0].opponent = game.playerList[1];
         game.playerList[1].opponent = game.playerList[0];
     }
@@ -178,6 +180,7 @@ public class GameManager : MonoBehaviour
         if (game.selectedCharacter.Attack(enemy.GetComponent<UnityCharacter>().daedra))
         {
             actionState = ActionState.None;
+            Instantiate(playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.GetComponent<UnityCharacter>().RandomAnimation(),enemy.transform.position, Quaternion.identity, gameParent.transform);
             PlayAttackSound();
         }
     }
@@ -198,7 +201,11 @@ public class GameManager : MonoBehaviour
     {
         if (game.selectedCharacter.AttackBuilding((ClassBase)cell.GetComponent<Cell>().cell.mazeObject))
         {
+            audioSource.volume = 1f;
             actionState = ActionState.None;
+            Instantiate(playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.GetComponent<UnityCharacter>().RandomAnimation(), cell.transform.position, Quaternion.identity, gameParent.transform);
+            audioSource.clip = attackBase;
+            audioSource.Play();
         }
     }
     public void SuscribeToEvent()
@@ -331,69 +338,72 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (game.selectedCharacter != null &&  actionState != ActionState.PlaceBase1 && actionState != ActionState.PlaceBase2 && actionState != ActionState.GameOver) 
-        {
+        if (actionState != ActionState.PlaceBase1 && actionState != ActionState.PlaceBase2 && actionState != ActionState.GameOver) 
+        {            
+            if (game.selectedCharacter != null)
+            {                
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    playersScrolls[game.turn.id].GetComponent<CharacterScroll>().Move();
+                }
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    playersScrolls[game.turn.id].GetComponent<CharacterScroll>().Attack();
+                }
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    playersScrolls[game.turn.id].GetComponent<CharacterScroll>().UseSkill();
+                }
+                if (actionState == ActionState.Move)
+                {
+                    if (Input.GetKeyDown(KeyCode.W))
+                    {
+                        if (game.selectedCharacter.cell.Row - 1 >= 0)
+                        {
+                            GameObject cell = unityCells[(game.selectedCharacter.cell.Row - 1, game.selectedCharacter.cell.Column)];
+                            cell.GetComponent<Cell>().IsClicked();
+                        }
+                    }
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        if (game.selectedCharacter.cell.Row + 1 < ClassMaze.size)
+                        {
+                            GameObject cell = unityCells[(game.selectedCharacter.cell.Row + 1, game.selectedCharacter.cell.Column)];
+                            cell.GetComponent<Cell>().IsClicked();
+                        }
+                    }
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        if (game.selectedCharacter.cell.Column + 1 < ClassMaze.size)
+                        {
+                            GameObject cell = unityCells[(game.selectedCharacter.cell.Row, game.selectedCharacter.cell.Column + 1)];
+                            cell.GetComponent<Cell>().IsClicked();
+                            Vector3 localScale = playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale;
+                            localScale.x = -1;
+                            playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale = localScale;
+
+                        }
+                    }
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        if (game.selectedCharacter.cell.Column - 1 >= 0)
+                        {
+                            GameObject cell = unityCells[(game.selectedCharacter.cell.Row, game.selectedCharacter.cell.Column - 1)];
+                            cell.GetComponent<Cell>().IsClicked();
+                            Vector3 localScale = playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale;
+                            localScale.x = 1;
+                            playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale = localScale;
+                        }
+                    }
+                    if (game.selectedCharacter != null && game.selectedCharacter.ValidSteps == 0)
+                    {
+                        actionState = ActionState.None;
+                    }
+                }
+            }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 PassTurn();
-            }
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                playersScrolls[game.turn.id].GetComponent<CharacterScroll>().Move();
-            }
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                playersScrolls[game.turn.id].GetComponent<CharacterScroll>().Attack();
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                playersScrolls[game.turn.id].GetComponent<CharacterScroll>().UseSkill();
-            }
-            if (actionState == ActionState.Move)
-            {
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    if (game.selectedCharacter.cell.Row - 1 >= 0)
-                    {
-                        GameObject cell = unityCells[(game.selectedCharacter.cell.Row - 1, game.selectedCharacter.cell.Column)];
-                        cell.GetComponent<Cell>().IsClicked();
-                    }
-                }
-                if (Input.GetKeyDown(KeyCode.S))
-                {
-                    if (game.selectedCharacter.cell.Row + 1 < ClassMaze.size)
-                    {
-                        GameObject cell = unityCells[(game.selectedCharacter.cell.Row + 1, game.selectedCharacter.cell.Column)];
-                        cell.GetComponent<Cell>().IsClicked();
-                    }
-                }
-                if (Input.GetKeyDown(KeyCode.D))
-                {
-                    if (game.selectedCharacter.cell.Column + 1 < ClassMaze.size)
-                    {
-                        GameObject cell = unityCells[(game.selectedCharacter.cell.Row, game.selectedCharacter.cell.Column + 1)];
-                        cell.GetComponent<Cell>().IsClicked();
-                        Vector3 localScale = playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale;
-                        localScale.x = -1;
-                        playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale = localScale;
-
-                    }
-                }
-                if (Input.GetKeyDown(KeyCode.A))
-                {
-                    if (game.selectedCharacter.cell.Column - 1 >= 0)
-                    {
-                        GameObject cell = unityCells[(game.selectedCharacter.cell.Row, game.selectedCharacter.cell.Column - 1)];
-                        cell.GetComponent<Cell>().IsClicked();
-                        Vector3 localScale = playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale;
-                        localScale.x = 1;
-                        playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.transform.localScale = localScale;
-                    }
-                }
-                if (game.selectedCharacter != null && game.selectedCharacter.ValidSteps == 0)
-                {
-                    actionState = ActionState.None;
-                }
             }
         }
     }

@@ -12,6 +12,9 @@ public class Cell : MonoBehaviour
     public ClassCell cell;
     public GameObject daedricTower;
     public GameObject fire;
+    public GameObject portal;
+    public GameObject poison;
+    public GameObject tentacle;
 
     void Start()
     {
@@ -64,20 +67,21 @@ public class Cell : MonoBehaviour
                     {
                         ((ClassTrapp)cell.mazeObject).ActivateTrapp(cell.character);
                         canvas.GetComponent<GameManager>().PlayTrappSound(((ClassTrapp)cell.mazeObject).Id);
+                        InstantiateTrapp(cell);
                         if (((ClassTrapp)cell.mazeObject).Id == 2)
                         {
+                            ClassCell dest = Factory.game.maze.RandomNotOcupiedCell();
                             if (Factory.game.turn.id == 0)
-                            {
-                                ClassCell dest = Factory.game.maze.RandomNotOcupiedCell();
+                            {                                
                                 canvas.GetComponent<GameManager>().player1Scroll.GetComponent<CharacterScroll>().activeCharacter.transform.position = new Vector3(dest.X, dest.Y);
                                 canvas.GetComponent<GameManager>().player1Scroll.GetComponent<CharacterScroll>().activeCharacter.GetComponent<UnityCharacter>().daedra.Teleport(dest);
                             }
                             if(Factory.game.turn.id == 1)
-                            {
-                                ClassCell dest = Factory.game.maze.RandomNotOcupiedCell();
+                            {                                
                                 canvas.GetComponent<GameManager>().player2Scroll.GetComponent<CharacterScroll>().activeCharacter.transform.position = new Vector3(dest.X, dest.Y);
                                 canvas.GetComponent<GameManager>().player2Scroll.GetComponent<CharacterScroll>().activeCharacter.GetComponent<UnityCharacter>().daedra.Teleport(dest);
                             }
+                            InstantiateTrapp(dest);
                         }
                     }
                 }
@@ -103,6 +107,21 @@ public class Cell : MonoBehaviour
 
 
 
+        }
+    }
+    public void InstantiateTrapp(ClassCell destination)
+    {
+        if (((ClassTrapp)cell.mazeObject).Id == 0)
+        {
+            Instantiate(tentacle, new Vector3(destination.X,destination.Y), Quaternion.identity, canvas.transform);
+        }
+        if (((ClassTrapp)cell.mazeObject).Id == 2)
+        {
+            Instantiate(portal, new Vector3(destination.X, destination.Y), Quaternion.identity, canvas.transform);
+        }
+        if (((ClassTrapp)cell.mazeObject).Id == 3)
+        {
+            Instantiate(poison, new Vector3(destination.X, destination.Y), Quaternion.identity, canvas.transform);
         }
     }
     public void InstantiateFire(ClassCell destination)

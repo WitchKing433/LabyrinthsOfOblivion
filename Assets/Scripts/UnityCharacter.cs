@@ -9,6 +9,7 @@ public class UnityCharacter : MonoBehaviour
     public GameObject scroll;
     public ClassCharacter daedra;
     public Sprite characterLargeImage;
+    public List<GameObject> attackAnimations;
     void Start()
     {
         canvas = FindFirstObjectByType<Canvas>();
@@ -17,6 +18,11 @@ public class UnityCharacter : MonoBehaviour
     void Update()
     {
         
+    }
+    public GameObject RandomAnimation()
+    {
+        System.Random random = new System.Random();
+        return attackAnimations[random.Next(attackAnimations.Count)];
     }
     public void OnClick()
     {

@@ -234,14 +234,13 @@ namespace ClassLibraryMazeGame
                 {
                     if (target != null && target.owner == owner) 
                     { 
-                        ActivateBoethiahSkill(target);
-                        return true;
+                        return ActivateBoethiahSkill(target);
                     }
                 }
             }
             return false;
         }
-        void ActivateBoethiahSkill(ClassCharacter ally)
+        bool ActivateBoethiahSkill(ClassCharacter ally)
         {
             if (ally.Health <= 25)
             {
@@ -249,7 +248,9 @@ namespace ClassLibraryMazeGame
                 BuffPower(10);
                 basePower += 10;
                 cooldown = 2;
+                return true;
             }
+            return false;
         }
         public void ResetStats()
         {

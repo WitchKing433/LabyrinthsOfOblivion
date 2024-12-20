@@ -149,6 +149,15 @@ MonoBehaviour:
   canvas: {fileID: 0}
   scroll: {fileID: 0}
   characterLargeImage: {fileID: -9063292718089055095, guid: 0e17100e160bf4749a2592eee7c10593, type: 3}
+  attackAnimations:
+  - {fileID: 3613337957570065546, guid: 9c8a70df5f94fa046868c4ba343f5f66, type: 3}
+  - {fileID: 4859405624225422353, guid: d324c3ba55c07994b9185201ac7e8954, type: 3}
+  - {fileID: 9179590402620287289, guid: 17cf18488b0104f468a57b4235305ed9, type: 3}
+  - {fileID: 5265480540743659896, guid: b83347c0b7d769b47bf46e74fb8ffcc1, type: 3}
+  - {fileID: 5968115621414768751, guid: 6462a0c8e51166142b089e132a37c96d, type: 3}
+  - {fileID: 6827533888763296217, guid: ea5a0e5957d6bd743b0ef24d2ee64856, type: 3}
+  - {fileID: 9078589984314379192, guid: 4d8b1e384ed30d74c842471ff115bf2b, type: 3}
+  - {fileID: 5295998112104922826, guid: 105ac09a9e9e15d42beb62ddc58e3ae8, type: 3}
 --- !u!82 &-5586519959357588911
 AudioSource:
   m_ObjectHideFlags: 0
