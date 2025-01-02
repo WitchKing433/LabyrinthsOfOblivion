@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
-using static UnityEditor.PlayerSettings;
 
 public class Cell : MonoBehaviour
 {
@@ -65,11 +64,12 @@ public class Cell : MonoBehaviour
                     }
                     if(movement == 2)
                     {
+                        ShowTrapp();
                         ((ClassTrapp)cell.mazeObject).ActivateTrapp(cell.character);
                         canvas.GetComponent<GameManager>().PlayTrappSound(((ClassTrapp)cell.mazeObject).Id);
                         InstantiateTrapp(cell);
                         if (((ClassTrapp)cell.mazeObject).Id == 2)
-                        {
+                        {                            
                             ClassCell dest = Factory.game.maze.RandomNotOcupiedCell();
                             if (Factory.game.turn.id == 0)
                             {                                
@@ -158,6 +158,10 @@ public class Cell : MonoBehaviour
             case 3:
                 Instantiate(canvas.GetComponent<GameManager>().trappsPrefabs[3], new Vector3(cell.X, cell.Y), Quaternion.identity, canvas.GetComponent<GameManager>().gameParent.transform);
                 break;
+        }
+        for (int i = 0; i < canvas.GetComponent<GameManager>().availableUnityCharacters.Count; i++)
+        {
+            canvas.GetComponent<GameManager>().availableUnityCharacters[i].transform.SetAsLastSibling();
         }
     }
     public void SetBase(float x, float y, ClassCell destination, int p)

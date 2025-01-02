@@ -203,9 +203,12 @@ namespace ClassLibraryMazeGame
                 {
                     for(int i = 0; i < owner.opponent.team.Count; i++)
                     {
-                        owner.opponent.team[i].Health = random.Next(1, 100);
-                        owner.opponent.team[i].ValidSteps = random.Next(21);
-                        owner.opponent.team[i].Power = random.Next(30);                        
+                        if (owner.opponent.team[i].inactiveTime <= 0) 
+                        {
+                            owner.opponent.team[i].Health = random.Next(1, 100);
+                            owner.opponent.team[i].ValidSteps = random.Next(5, 31);
+                            owner.opponent.team[i].Power = random.Next(1, 31);
+                        }
                     }
                     cooldown = 7;
                     return true;

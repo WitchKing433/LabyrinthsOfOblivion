@@ -1,0 +1,789 @@
+fileFormatVersion: 2
+guid: 663d69b5ba41607449a3544e3e61c395
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2718254331954344829
+    second: Oblivion-Logo_0
+  - first:
+      213: -5485069084579396437
+    second: Oblivion-Logo_1
+  - first:
+      213: 7624588906570842371
+    second: Oblivion-Logo_2
+  - first:
+      213: -2118167843437457458
+    second: Oblivion-Logo_3
+  - first:
+      213: 4106312073706110536
+    second: Oblivion-Logo_4
+  - first:
+      213: 6961702838877516174
+    second: Oblivion-Logo_5
+  - first:
+      213: 969328837902424279
+    second: Oblivion-Logo_6
+  - first:
+      213: -4944783465955304389
+    second: Oblivion-Logo_7
+  - first:
+      213: 6001862985386636313
+    second: Oblivion-Logo_8
+  - first:
+      213: -5847673190181489107
+    second: Oblivion-Logo_9
+  - first:
+      213: 2440047332973107
+    second: Oblivion-Logo_10
+  - first:
+      213: 6959519850104677899
+    second: Oblivion-Logo_11
+  - first:
+      213: -88404894088590908
+    second: Oblivion-Logo_12
+  - first:
+      213: -5823435250150538094
+    second: Oblivion-Logo_13
+  - first:
+      213: -8404781665572146870
+    second: Oblivion-Logo_14
+  - first:
+      213: -7062044141994118701
+    second: Oblivion-Logo_15
+  - first:
+      213: 7709357111892213181
+    second: Oblivion-Logo_16
+  - first:
+      213: -7021044794500191349
+    second: Oblivion-Logo_17
+  - first:
+      213: 2677157005229353946
+    second: Oblivion-Logo_18
+  - first:
+      213: -8668653690056503649
+    second: Oblivion-Logo_19
+  - first:
+      213: 3307757208383380300
+    second: Oblivion-Logo_20
+  - first:
+      213: 463966292118106627
+    second: Oblivion-Logo_21
+  - first:
+      213: 5412020333222621234
+    second: Oblivion-Logo_22
+  - first:
+      213: 5374366228441426855
+    second: Oblivion-Logo_23
+  - first:
+      213: 7096259500995505479
+    second: Oblivion-Logo_24
+  - first:
+      213: -5716513224375030544
+    second: Oblivion-Logo_25
+  - first:
+      213: 1087392104585182561
+    second: Oblivion-Logo_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oblivion-Logo_0
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 1713
+        width: 262
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38cc1b64612d64ad0800000000000000
+      internalID: -2718254331954344829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_1
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 1716
+        width: 82
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba40b2d8abe11e3b0800000000000000
+      internalID: -5485069084579396437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_2
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 1695
+        width: 134
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3010a86b63bffc960800000000000000
+      internalID: 7624588906570842371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_3
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 1718
+        width: 58
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecf4145a191ca92e0800000000000000
+      internalID: -2118167843437457458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_4
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1716
+        width: 102
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e762a231d8cf830800000000000000
+      internalID: 4106312073706110536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_5
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 1716
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e817f17e8dfec9060800000000000000
+      internalID: 6961702838877516174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_6
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 1716
+        width: 86
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d857bd317fb37d00800000000000000
+      internalID: 969328837902424279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_7
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 1687
+        width: 138
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c5284e2a9906bb0800000000000000
+      internalID: -4944783465955304389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_8
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1717
+        width: 81
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91439820696ea4350800000000000000
+      internalID: 6001862985386636313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_9
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 1716
+        width: 86
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2638a04734e8dea0800000000000000
+      internalID: -5847673190181489107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_10
+      rect:
+        serializedVersion: 2
+        x: 2242
+        y: 1718
+        width: 88
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a548ac53ba80000800000000000000
+      internalID: 2440047332973107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_11
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 1718
+        width: 58
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06e4c83e6e259060800000000000000
+      internalID: 6959519850104677899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_12
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 1718
+        width: 57
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9817b973ce5cef0800000000000000
+      internalID: -88404894088590908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_13
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 1717
+        width: 79
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2940a4e6e700f2fa0800000000000000
+      internalID: -5823435250150538094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_14
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 1715
+        width: 238
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a413bd80b973c5b80800000000000000
+      internalID: -8404781665572146870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_15
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1622
+        width: 3761
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1ff48e4449efd90800000000000000
+      internalID: -7062044141994118701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_16
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 1080
+        width: 483
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd77f482732dfa60800000000000000
+      internalID: 7709357111892213181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_17
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1082
+        width: 413
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8be5bf55fc309e90800000000000000
+      internalID: -7021044794500191349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_18
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1090
+        width: 367
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adbe4a0bc1c272520800000000000000
+      internalID: 2677157005229353946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_19
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 1088
+        width: 212
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9e8d4bb561c2b780800000000000000
+      internalID: -8668653690056503649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_20
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 1079
+        width: 499
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bdde0e7a387ed20800000000000000
+      internalID: 3307757208383380300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_21
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 1084
+        width: 191
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 302747d62e6507600800000000000000
+      internalID: 463966292118106627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_22
+      rect:
+        serializedVersion: 2
+        x: 2693
+        y: 1081
+        width: 481
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230fce6a1db5b1b40800000000000000
+      internalID: 5412020333222621234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_23
+      rect:
+        serializedVersion: 2
+        x: 3258
+        y: 1078
+        width: 506
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab6b133c95959a40800000000000000
+      internalID: 5374366228441426855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_24
+      rect:
+        serializedVersion: 2
+        x: 3763
+        y: 1579
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74de3d62b6afa7260800000000000000
+      internalID: 7096259500995505479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_25
+      rect:
+        serializedVersion: 2
+        x: 3786
+        y: 1578
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fcad43828ddaa0b0800000000000000
+      internalID: -5716513224375030544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oblivion-Logo_26
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 276
+        width: 493
+        height: 722
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d3d5d9b51371f00800000000000000
+      internalID: 1087392104585182561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Oblivion-Logo_0: -2718254331954344829
+      Oblivion-Logo_1: -5485069084579396437
+      Oblivion-Logo_10: 2440047332973107
+      Oblivion-Logo_11: 6959519850104677899
+      Oblivion-Logo_12: -88404894088590908
+      Oblivion-Logo_13: -5823435250150538094
+      Oblivion-Logo_14: -8404781665572146870
+      Oblivion-Logo_15: -7062044141994118701
+      Oblivion-Logo_16: 7709357111892213181
+      Oblivion-Logo_17: -7021044794500191349
+      Oblivion-Logo_18: 2677157005229353946
+      Oblivion-Logo_19: -8668653690056503649
+      Oblivion-Logo_2: 7624588906570842371
+      Oblivion-Logo_20: 3307757208383380300
+      Oblivion-Logo_21: 463966292118106627
+      Oblivion-Logo_22: 5412020333222621234
+      Oblivion-Logo_23: 5374366228441426855
+      Oblivion-Logo_24: 7096259500995505479
+      Oblivion-Logo_25: -5716513224375030544
+      Oblivion-Logo_26: 1087392104585182561
+      Oblivion-Logo_3: -2118167843437457458
+      Oblivion-Logo_4: 4106312073706110536
+      Oblivion-Logo_5: 6961702838877516174
+      Oblivion-Logo_6: 969328837902424279
+      Oblivion-Logo_7: -4944783465955304389
+      Oblivion-Logo_8: 6001862985386636313
+      Oblivion-Logo_9: -5847673190181489107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

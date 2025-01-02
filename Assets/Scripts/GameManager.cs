@@ -8,6 +8,7 @@ using System;
 using TMPro;
 using System.Xml.Serialization;
 using static UnityEngine.EventSystems.EventTrigger;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> player1Characters;
     public List<GameObject> player2Characters;
     public TMP_Text gameInfo;
-    public enum ActionState { None, Move, Attack, Skill, PlaceBase1, PlaceBase2, GameOver};
+    public enum ActionState { None, Move, Attack, Skill, PlaceBase1, PlaceBase2, GameOver, Pause};
     public static ActionState actionState = ActionState.PlaceBase1;
     public GameObject daedricTower;
     ClassMazeLogic game;
@@ -149,7 +150,7 @@ public class GameManager : MonoBehaviour
                 PassTurn();
         }
     }
-    public void SelectCharacter(GameObject character)
+    public void SelectCharacter(GameObject character, bool charDead = false)
     {
         if (character != null)
         {
@@ -167,7 +168,9 @@ public class GameManager : MonoBehaviour
                 player2Scroll.GetComponent<CharacterScroll>().SetScrollCharacter(character);
                 player2Scroll.SetActive(true);
             }
-        }
+        }else
+        if (charDead)
+            playersScrolls[game.turn.opponent.id].GetComponent<CharacterScroll>().activeCharacter = null;
         else
         {
             game.selectedCharacter = null;
@@ -177,10 +180,11 @@ public class GameManager : MonoBehaviour
     }
     public void AttackToMe(GameObject enemy)
     {
+        Vector3 pos = enemy.transform.position;
         if (game.selectedCharacter.Attack(enemy.GetComponent<UnityCharacter>().daedra))
         {
             actionState = ActionState.None;
-            Instantiate(playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.GetComponent<UnityCharacter>().RandomAnimation(),enemy.transform.position, Quaternion.identity, gameParent.transform);
+            Instantiate(playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.GetComponent<UnityCharacter>().RandomAnimation(),pos , Quaternion.identity, gameParent.transform);
             PlayAttackSound();
         }
     }
@@ -227,7 +231,7 @@ public class GameManager : MonoBehaviour
             {
                 availableUnityCharacters[i].SetActive(false);
                 actionState = ActionState.None;
-                SelectCharacter(null);
+                SelectCharacter(null, true);
             }
         }
     }
@@ -256,7 +260,6 @@ public class GameManager : MonoBehaviour
         {
             playersScrolls[game.turn.id].GetComponent<CharacterScroll>().activeCharacter.GetComponent<AudioSource>().Play();
         }
-        ShowTrapps();
     }
 
 
@@ -271,7 +274,31 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    public void ClickOnImage(GameObject image)
+    {
+        for (int i = 0; i < player1Characters.Count; i++)
+        {
+            if (image.GetComponent<Image>().sprite == player1Characters[i].GetComponent<Image>().sprite)
+            {
+                if(player1Characters[i].GetComponent<UnityCharacter>().daedra.InactiveTime <= 0)
+                {
+                    SelectCharacter(player1Characters[i]);
+                }
+                return;
+            }
+        }
+        for (int i = 0; i < player2Characters.Count; i++)
+        {
+            if (image.GetComponent<Image>().sprite == player2Characters[i].GetComponent<Image>().sprite)
+            {
+                if (player2Characters[i].GetComponent<UnityCharacter>().daedra.InactiveTime <= 0)
+                {
+                    SelectCharacter(player2Characters[i]);
+                }
+                return;
+            }
+        }
+    }
 
 
 
@@ -284,7 +311,6 @@ public class GameManager : MonoBehaviour
         game.turn = game.playerList[0];
         FillBoard();
         ClassTrapp.PlaceTrapps();
-        ShowTrapps();
         for (int i = 0; i < availableUnityCharacters.Count; i++)
         {
             availableUnityCharacters[i].transform.SetAsLastSibling();
@@ -338,7 +364,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (actionState != ActionState.PlaceBase1 && actionState != ActionState.PlaceBase2 && actionState != ActionState.GameOver) 
+        if (actionState != ActionState.PlaceBase1 && actionState != ActionState.PlaceBase2 && actionState != ActionState.GameOver && actionState != ActionState.Pause) 
         {            
             if (game.selectedCharacter != null)
             {                
@@ -400,10 +426,6 @@ public class GameManager : MonoBehaviour
                         actionState = ActionState.None;
                     }
                 }
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                PassTurn();
             }
         }
     }
