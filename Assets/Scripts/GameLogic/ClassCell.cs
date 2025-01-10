@@ -40,7 +40,8 @@ namespace ClassLibraryMazeGame
         public void SetMazeObject(ClassMazeObject mzObj)
         {
             mazeObject = mzObj;
-            mzObj.cell = this;
+            if(mzObj != null)
+                mzObj.cell = this;
         }
         public void SetCharacter(ClassCharacter entity)
         {

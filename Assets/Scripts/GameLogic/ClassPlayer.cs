@@ -13,6 +13,7 @@ namespace ClassLibraryMazeGame
         public List<ClassCharacter> team;
         public ClassBase selfBase;
         public bool canActivateTrapps = true;
+        public bool skullOfCorruption = false;
         public int asleep = 0;
         public ClassPlayer(int i, int baseHealth, int baseRadius)
         {
@@ -35,6 +36,7 @@ namespace ClassLibraryMazeGame
             if(asleep > 0)
                 asleep--;
             selfBase.RandomPlaceCharacters();
+            opponent.selfBase.HealAndDamage();
         }
     }
 }

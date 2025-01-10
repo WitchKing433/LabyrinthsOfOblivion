@@ -148,14 +148,6 @@ namespace ClassLibraryMazeGame
         {
             return iRow  == -1 || iRow == size || iCol  == -1 || iCol == size;
         }
-        public void SetTrapps(int number)
-        {
-            Random random = new Random();
-            for(; number > 0; number--)
-            {
-
-            }
-        }
         public void SetMazeObject(ClassMazeObject mzObj, int iRow, int iColumn)
         {
             maze[iRow, iColumn].SetMazeObject(mzObj);

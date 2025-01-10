@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pause;
+    public GameObject itemInfo;
     void Start()
     {
         
@@ -21,6 +22,10 @@ public class PauseMenu : MonoBehaviour
                 GameManager.actionState = GameManager.ActionState.Pause;
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Continue();
+        }
         
     }
 
@@ -35,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Continue()
     {
+        itemInfo.SetActive(false);
         pause.SetActive(false);
         GameManager.actionState = GameManager.ActionState.None;
     }

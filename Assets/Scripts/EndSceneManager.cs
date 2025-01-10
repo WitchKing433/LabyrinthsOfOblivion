@@ -26,8 +26,7 @@ public class EndSceneManager : MonoBehaviour
         else
         {
             winner.SetActive(false);
-            winnerText.transform.position = new Vector3(winnerText.transform.position.x, winnerText.transform.position.y + 10);
-            winnerText.GetComponent<TMP_Text>().text = "Felicidades \r\na ambos, es un empate!";
+            winnerText.GetComponent<TMP_Text>().text = "Felicidades \r\na ambos!";
         }
     }
     public void RestartGame()

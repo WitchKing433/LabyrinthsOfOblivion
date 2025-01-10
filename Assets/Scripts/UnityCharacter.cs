@@ -26,8 +26,9 @@ public class UnityCharacter : MonoBehaviour
     }
     public void OnClick()
     {
-        if (daedra.owner == Factory.game.turn && GameManager.actionState == GameManager.ActionState.None)
+        if (daedra.owner == Factory.game.turn && (GameManager.actionState == GameManager.ActionState.None || GameManager.actionState == GameManager.ActionState.Move))
         {
+            GameManager.actionState = GameManager.ActionState.None;
             canvas.GetComponent<GameManager>().SelectCharacter(this.gameObject);
         }
         if(daedra.owner != Factory.game.turn && GameManager.actionState != GameManager.ActionState.Move)

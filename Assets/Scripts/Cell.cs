@@ -2,8 +2,10 @@ using ClassLibraryMazeGame;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class Cell : MonoBehaviour
 {
@@ -14,12 +16,13 @@ public class Cell : MonoBehaviour
     public GameObject portal;
     public GameObject poison;
     public GameObject tentacle;
-
+    public List<GameObject> daedricItems;
+    public GameObject daedricItem;
     void Start()
     {
+        
         Factory.game.instantiateFireEvent += InstantiateFire;
         canvas = FindFirstObjectByType<Canvas>();
-           
     }
 
     void Update()
@@ -84,6 +87,10 @@ public class Cell : MonoBehaviour
                             InstantiateTrapp(dest);
                         }
                     }
+                    else if (movement == 3)
+                    {
+                        PickDaedricItem();
+                    }
                 }
             }
             else if (GameManager.actionState == GameManager.ActionState.Skill)
@@ -99,14 +106,10 @@ public class Cell : MonoBehaviour
             }
             else if (GameManager.actionState == GameManager.ActionState.None)
             {
-                canvas.GetComponent<GameManager>().SelectCharacter(null);
-                
+                if (cell.mazeObject is ClassDaedricItems)
+                    canvas.GetComponent<GameManager>().ShowItemInfo(this.gameObject);
+                canvas.GetComponent<GameManager>().SelectCharacter(null);                
             }
-
-
-
-
-
         }
     }
     public void InstantiateTrapp(ClassCell destination)
@@ -170,5 +173,13 @@ public class Cell : MonoBehaviour
         GameObject tower = Instantiate(daedricTower, pos, Quaternion.identity, Object.FindFirstObjectByType<Canvas>().GetComponent<GameManager>().gameParent.transform);
         tower.GetComponent<Cell>().cell = destination;
         Factory.game.playerList[p].selfBase.SetBase(destination);
+    }
+    public void SetDaedricItem()
+    {
+        daedricItem = Instantiate(daedricItems[((ClassDaedricItems)cell.mazeObject).Id], this.transform.position, Quaternion.identity, canvas.GetComponent<GameManager>().gameParent.transform);
+    }
+    public void PickDaedricItem()
+    {
+        Destroy(daedricItem);
     }
 }

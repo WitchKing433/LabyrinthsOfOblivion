@@ -43,9 +43,18 @@ public class PlayersBoard : MonoBehaviour
     {
         if(owner != null)
         {
-            character1Health.text = $"{playerCharacters[0].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[0].GetComponent<UnityCharacter>().daedra.BaseHealth}";
-            character2Health.text = $"{playerCharacters[1].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[1].GetComponent<UnityCharacter>().daedra.BaseHealth}";
-            character3Health.text = $"{playerCharacters[2].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[2].GetComponent<UnityCharacter>().daedra.BaseHealth}";
+            if (playerCharacters[0].GetComponent<UnityCharacter>().daedra.InactiveTime == 0)
+                character1Health.text = $"{playerCharacters[0].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[0].GetComponent<UnityCharacter>().daedra.BaseHealth}";
+            else
+                character1Health.text = $"Inactivo\r\n({playerCharacters[0].GetComponent<UnityCharacter>().daedra.InactiveTime}turnos)";
+            if (playerCharacters[1].GetComponent<UnityCharacter>().daedra.InactiveTime == 0)
+                character2Health.text = $"{playerCharacters[1].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[1].GetComponent<UnityCharacter>().daedra.BaseHealth}";
+            else
+                character2Health.text = $"Inactivo\r\n({playerCharacters[1].GetComponent<UnityCharacter>().daedra.InactiveTime}turnos)";
+            if (playerCharacters[2].GetComponent<UnityCharacter>().daedra.InactiveTime == 0)
+                character3Health.text = $"{playerCharacters[2].GetComponent<UnityCharacter>().daedra.Health}/{playerCharacters[2].GetComponent<UnityCharacter>().daedra.BaseHealth}";
+            else
+                character3Health.text = $"Inactivo\r\n({playerCharacters[2].GetComponent<UnityCharacter>().daedra.InactiveTime}turnos)";
             PlayerBaseHealth.text = $"{owner.selfBase.Health}/500";
             if (owner.asleep != 0)
             {

@@ -95,6 +95,14 @@ MonoBehaviour:
   portal: {fileID: 2259019705902847515, guid: 89303efd79081fd4fb1c09b76262593b, type: 3}
   poison: {fileID: 2775318490457856490, guid: 640e76332498d874cb50f406fdf74db1, type: 3}
   tentacle: {fileID: 139339670106131665, guid: a024fae62ae50c648b1ba2109120555f, type: 3}
+  daedricItems:
+  - {fileID: 6249957011551386670, guid: fe702f0ff072810479751461557359e3, type: 3}
+  - {fileID: 2653528667303976244, guid: 4f87c17419b1f4a44aee9a3f29155a75, type: 3}
+  - {fileID: 8473476438001682813, guid: e7abc4d29f80bee488dff1b4d0043e84, type: 3}
+  - {fileID: 3438796719880613506, guid: 72903824cb7213e4bb28281e6fa5e0aa, type: 3}
+  - {fileID: 5278221256927699594, guid: bf326fe348335a44c834ec96eca892b7, type: 3}
+  - {fileID: 1421054491970299259, guid: b4a085e0e4c42a543bbf4d61d743bf55, type: 3}
+  daedricItem: {fileID: 0}
 --- !u!114 &-8607803347503192080
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine.TextCore.Text;
 using static UnityEngine.EventSystems.EventTrigger;
 
 namespace ClassLibraryMazeGame
@@ -12,11 +13,13 @@ namespace ClassLibraryMazeGame
         public delegate void SendToBaseEvent();
         public event SendToBaseEvent sendToBaseEvent;
         public ClassPlayer owner;
+        public ClassDaedricItems daedricItem;
         string name;
+        int id;
         int baseHealth;
         int health;
         int steps;
-        int basePower;
+        public int basePower;
         int power;
         int modifySteps = 0;
         int validSteps;
@@ -26,7 +29,11 @@ namespace ClassLibraryMazeGame
         public int poisoned;
         public bool canAttack = true;
         public bool selectionSkill;
-        public ClassCharacter(string n, int h, int s, int p)
+        bool canActivateTrapps = true;
+        int armor = 0;
+        bool mehrunesRazor;
+        bool poisonAura = false;
+        public ClassCharacter(string n, int h, int s, int p, int i)
         {
             name = n;
             baseHealth = h;
@@ -35,6 +42,7 @@ namespace ClassLibraryMazeGame
             validSteps = s;
             basePower = p;
             power = p;
+            id = i;
             if (name == "Boethiah")
             {
                 selectionSkill = true;
@@ -45,6 +53,7 @@ namespace ClassLibraryMazeGame
         public int InactiveTime { get { return inactiveTime; } }
         public int CoolDown { get { return cooldown; } }
         public int SkillDuration { get { return skillDuration; } }
+        public int Id { get { return id; } }
         public int Power
         {
             get { return power; }
@@ -99,20 +108,26 @@ namespace ClassLibraryMazeGame
         }
         public int MoveTo(ClassCell destination)
         {
-            if (validSteps > 0)
+            if (ValidSteps > 0)
             {
                 bool validRow = (destination.Row + 1 == cell.Row || destination.Row - 1 == cell.Row) && destination.Column == cell.Column;
                 bool validColumn = (destination.Column + 1 == cell.Column || destination.Column - 1 == cell.Column) && destination.Row == cell.Row;
                 if ((validColumn ^ validRow) && !(destination.mazeObject is ClassWall) && !(destination.character is ClassCharacter))
                 {
-                    if (destination.mazeObject is ClassTrapp && owner.canActivateTrapps)
+                    if (destination.mazeObject is ClassTrapp && owner.canActivateTrapps && canActivateTrapps)
                     {                        
                         Teleport(destination);
-                        validSteps--;
+                        ValidSteps--;
                         return 2;
                     }
+                    else if (destination.mazeObject is ClassDaedricItems)
+                    {
+                        Teleport(destination);
+                        ValidSteps--;
+                        return ((ClassDaedricItems)destination.mazeObject).PickDaedricItem(this);
+                    }
                     Teleport(destination);
-                    validSteps--;
+                    ValidSteps--;
                     return 1;
                 }
             }
@@ -129,6 +144,14 @@ namespace ClassLibraryMazeGame
         }
         public void GotoBase()
         {
+            if(owner.asleep > 0 && owner.opponent.skullOfCorruption)
+            {
+                for (int i = 0; i < owner.opponent.team.Count; i++)
+                {
+                    owner.opponent.team[i].BuffPower(10);
+                    owner.opponent.team[i].basePower += 10;
+                }
+            }
             poisoned = 0;
             owner.selfBase.AddCharacterToBase(this);
             this.cell.SetCharacter(null);
@@ -139,11 +162,17 @@ namespace ClassLibraryMazeGame
 
         public void Damaged(int h)
         {
-            Health -= h;
+            if(armor - h < 0)
+                Health -= h - armor;
         }
         public void Heal(int h)
         {
-            Health += h;
+            if (health < baseHealth)
+            {
+                Health += h;
+                if(health > baseHealth) 
+                    health = baseHealth;
+            }                       
         }
         public void DeSpeed(int s)
         {
@@ -164,8 +193,15 @@ namespace ClassLibraryMazeGame
         public bool Attack(ClassCharacter enemy)
         {
             if (canAttack && Factory.game.maze.CloseCells(cell,enemy.cell))
-            {                                             
-                enemy.Damaged(power);
+            {
+                if (mehrunesRazor)
+                {
+                    Random random = new Random();
+                    if(random.Next(6) == 2)
+                        enemy.Damaged(10000);
+                }
+                else
+                    enemy.Damaged(power);
                 canAttack = false;
                 return true;
             }
@@ -188,7 +224,7 @@ namespace ClassLibraryMazeGame
             {
                 if(name == "Vaermina")
                 {
-                    owner.opponent.asleep += 2;                           //agregar el efecto 
+                    owner.opponent.asleep += 2;
                     cooldown = 7;
                     return true;
                 }
@@ -197,6 +233,8 @@ namespace ClassLibraryMazeGame
                     owner.canActivateTrapps = false;
                     cooldown = 5;
                     skillDuration = 3;
+                    if (daedricItem != null)
+                        skillDuration++;
                     return true;
                 }
                 if (name == "Sheogorath")
@@ -208,6 +246,11 @@ namespace ClassLibraryMazeGame
                             owner.opponent.team[i].Health = random.Next(1, 100);
                             owner.opponent.team[i].ValidSteps = random.Next(5, 31);
                             owner.opponent.team[i].Power = random.Next(1, 31);
+                            if(daedricItem != null)
+                            {
+                                owner.opponent.team[i].modifySteps = -random.Next(1, 20);
+                                skillDuration = 2;
+                            }
                         }
                     }
                     cooldown = 7;
@@ -217,7 +260,7 @@ namespace ClassLibraryMazeGame
                 {
                     BuffPower(baseHealth - health);
                     cooldown = 5;
-                    skillDuration = 3;
+                    skillDuration = 1;
                     return true;
                 }
                 if(name == "Peryite")
@@ -261,6 +304,7 @@ namespace ClassLibraryMazeGame
             validSteps = steps;
             power = basePower;
             poisoned = 0;
+            modifySteps = 0;
         }
         public void PassTurn()
         {
@@ -289,8 +333,59 @@ namespace ClassLibraryMazeGame
                     DeactivateSkill();
                 }
             }
+            if (poisonAura)
+                PoisonAura();
             RestoreSteps();
             canAttack = true;
+        }
+        public void PickDaedricItem()
+        {
+            switch (id)
+            {
+                case 0:
+                    canActivateTrapps = false;
+                    steps += 10;
+                    break;
+                case 1:
+                    owner.skullOfCorruption = true;
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    armor += 10;
+                    break;
+                case 4:
+                    mehrunesRazor = true;
+                    break;
+                case 5:
+                    armor += 5;
+                    poisonAura = true;
+                    break;
+            }
+        }
+        void PoisonAura()
+        {
+            int[] dirRow = new int[] { 0, 1, 0, -1 };
+            int[] dirCol = new int[] { 1, 0, -1, 0 };
+            int iRow = cell.Row - 1;
+            int iCol = cell.Column - 1;
+            bool flag = true;
+            for (int i = 0; ; iRow += dirRow[i % 4], iCol += dirCol[i % 4])
+            {
+                if (iRow >= 0 && iRow < ClassMaze.size && iCol >= 0 && iCol < ClassMaze.size && Factory.game.maze.maze[iRow, iCol].character != null && Factory.game.maze.maze[iRow, iCol].character.owner != owner)
+                {
+                    Factory.game.maze.maze[iRow, iCol].character.Damaged(10);
+                }
+                if (flag)
+                {
+                    flag = false;
+                    continue;
+                }
+                if (iRow == cell.Row - 1 && iCol == cell.Column - 1)
+                    break;
+                if ((iRow == cell.Row + 1 && iCol == cell.Column + 1) || (iRow == cell.Row + 1 && iCol == cell.Column - 1) || (iRow == cell.Row - 1 && iCol == cell.Column + 1))
+                    i++;
+            }
         }
         public void DeactivateSkill()
         {
@@ -298,6 +393,8 @@ namespace ClassLibraryMazeGame
                 owner.canActivateTrapps = true;
             if(name == "Mehrunes Dagon")
                 Power = basePower;
+            if (name == "Sheogorath")
+                modifySteps = 0;
         }
 
     }

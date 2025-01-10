@@ -12,6 +12,8 @@ namespace ClassLibraryMazeGame
         public event InstantiateCharacterEvent instantiateCharacterEvent;
         public delegate void GameOver();
         public event GameOver gameOver;
+        public delegate void Attack(ClassCell dest);
+        public event Attack attack;
         int radius;
         public List<ClassCell> influenceArea;
         public ClassPlayer owner;
@@ -91,6 +93,24 @@ namespace ClassLibraryMazeGame
                 }
             }
             return false;
+        }
+        public void HealAndDamage()
+        {
+            for (int i = 0; i < influenceArea.Count; i ++)
+            {
+                if (influenceArea[i].character != null)
+                {
+                    if (influenceArea[i].character.owner == owner)
+                    {
+                        influenceArea[i].character.Heal(10);
+                    }
+                    else
+                    {
+                        influenceArea[i].character.Damaged(10);
+                        attack.Invoke(influenceArea[i]);
+                    }
+                }
+            }
         }
         public void RandomPlaceCharacters()
         {

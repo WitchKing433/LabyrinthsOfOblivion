@@ -33,9 +33,9 @@ public class CharacterScroll : MonoBehaviour
             this.gameObject.SetActive(true);
             characterImage.GetComponent<Image>().sprite = activeCharacter.GetComponent<UnityCharacter>().characterLargeImage;
             characterName.text = activeCharacter.GetComponent<UnityCharacter>().daedra.Name;
-            health.text = $"Health:{activeCharacter.GetComponent<UnityCharacter>().daedra.Health.ToString()}";
-            power.text = $"Power:{activeCharacter.GetComponent<UnityCharacter>().daedra.Power.ToString()}";
-            steps.text = $"Steps:{activeCharacter.GetComponent<UnityCharacter>().daedra.ValidSteps.ToString()}";
+            health.text = $"Vida:{activeCharacter.GetComponent<UnityCharacter>().daedra.Health.ToString()}";
+            power.text = $"Poder:{activeCharacter.GetComponent<UnityCharacter>().daedra.Power.ToString()}";
+            steps.text = $"Pasos:{activeCharacter.GetComponent<UnityCharacter>().daedra.ValidSteps.ToString()}";
             coolDown.text = $"Cd:{activeCharacter.GetComponent<UnityCharacter>().daedra.CoolDown.ToString()}";
             skillDuration.text = $"Sd:{activeCharacter.GetComponent<UnityCharacter>().daedra.SkillDuration.ToString()}";
             if(activeCharacter.GetComponent<UnityCharacter>().daedra.poisoned > 0)

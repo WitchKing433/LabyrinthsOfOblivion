@@ -9,7 +9,7 @@ namespace ClassLibraryMazeGame
     public class ClassTrapp : ClassMazeObject
     {
         public static int trappsCount = 5;
-        static int trapps = 4;                                    //cambiar cuando se agreguen más trampas
+        static int trapps = 4;                                    
         int id;
         
         public int Id {get { return id;}}
@@ -60,8 +60,8 @@ namespace ClassLibraryMazeGame
         }
         void ActivateTentacleTrapp(ClassCharacter character)
         {
-            character.Damaged(5);
-            character.DeSpeed(3);
+            character.Damaged(10);
+            character.DeSpeed(5);
         }
         void ActivateFireTrapp() 
         {

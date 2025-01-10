@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameParent;
     public List<ClassCharacter> availableCharacters;
     public List<ClassCharacter> availableCharactersCopy;
+    public List<ClassDaedricItems> daedricItems;
     public List<GameObject> availableUnityCharacters;
     public List<GameObject> charactersPrefabs;
     public List<GameObject> trappsPrefabs;
@@ -44,9 +45,15 @@ public class GameManager : MonoBehaviour
     public AudioClip attackBase;
     public GameObject musicManager;
     public GameObject endScene;
+    public GameObject itemInfo;
+    public TMP_Text itemDescription;
+    public TMP_Text daedraOwner;
+    public TMP_Text itemName;
+    public Image itemImage;
 
     void Start()
     {
+        daedricItems = new List<ClassDaedricItems>();
         audioSource = GetComponent<AudioSource>();
         playersScrolls = new List<GameObject>() { player1Scroll, player2Scroll };        
         player1Characters = new List<GameObject> ();
@@ -92,6 +99,7 @@ public class GameManager : MonoBehaviour
         game.AddPlayer(1, 500, 1);
         game.playerList[0].opponent = game.playerList[1];
         game.playerList[1].opponent = game.playerList[0];
+        CreateDaedricItems();
     }
     public void GameOver()
     {
@@ -127,11 +135,14 @@ public class GameManager : MonoBehaviour
         {
             if (game.turn.id == game.playerList.Count - 1)
             {
+                
                 if (actualTurn == 30)
                 {
                     GameOver();
                 }
                 actualTurn++;
+                if(actualTurn == 3 || actualTurn == 10 || actualTurn == 20 )
+                    SetDaedricItem();
                 turnsCount.text = $"Turno:\n{actualTurn}/30";
             }
             game.turn.PassTurn();
@@ -145,10 +156,57 @@ public class GameManager : MonoBehaviour
             else
             {
                 canvas.GetComponent<GameManager>().gameInfo.text = "Turno del segundo jugador";
+                if (actualTurn == 5 || actualTurn == 15 || actualTurn == 25)
+                    SetDaedricItem();
             }
             if(game.turn.asleep > 0)
                 PassTurn();
         }
+    }
+    public void ShowItemInfo(GameObject cell)
+    {
+        actionState = ActionState.Pause;
+        itemInfo.SetActive(true);
+        itemInfo.transform.SetAsLastSibling();
+        itemName.text = ((ClassDaedricItems)cell.GetComponent<Cell>().cell.mazeObject).Name;
+        itemImage.sprite = cell.GetComponent<Cell>().daedricItem.GetComponent<Image>().sprite;
+        switch (((ClassDaedricItems)cell.GetComponent<Cell>().cell.mazeObject).Id)
+        {
+            case 0:
+                itemDescription.text = "Impide que Hermaeus Mora active trampas de forma indefinida y aumenta en un turno la duración de su habilidad, además de aumentar su velocidad en 10";
+                daedraOwner.text = "Hermaeus Mora";
+                break;
+            case 1:
+                itemDescription.text = "Por cada enemigo eliminado mientras el oponente esté dormido aumenta en 10 el poder de todos los personajes durante el resto de la partida";
+                daedraOwner.text = "Vaermina";
+                break;
+            case 2:
+                itemDescription.text = "Potencia la habilidad de Sheogorath haciendo que modifique la velocidad base de los personajes enemigos durante 2 turnos";
+                daedraOwner.text = "Sheogorath";
+                break;
+            case 3:
+                itemDescription.text = "Le otorga 10 puntos de armadura a Peryite, reduciendo todo el daño recibido en 10 puntos";
+                daedraOwner.text = "Peryite";
+                break;
+            case 4:
+                itemDescription.text = "Le otorga a Mehrunes la capacidad de eliminar instantaneamente al enemigo atacado con una probabilidad del 20 porciento de acierto";
+                daedraOwner.text = "Mehrunes Dagon";
+                break;
+            case 5:
+                itemDescription.text = "Le otorga 5 puntos de armadura a Boethiah, reduciendo todo el daño recibido en 5 puntos y un aura venenosa la cual al finalizar su turno inflige 10 de daño a todos los enemigos cercanos";
+                daedraOwner.text = "Boethiah";
+                break;
+
+        }
+    }
+    public void SetDaedricItem()
+    {
+        System.Random random = new System.Random();
+        ClassCell cell = game.maze.RandomNotOcupiedCell();
+        int i = random.Next(daedricItems.Count);
+        daedricItems[i].SetDaedricItem(cell);
+        daedricItems.RemoveAt(i);
+        unityCells[(cell.Row, cell.Column)].GetComponent<Cell>().SetDaedricItem();
     }
     public void SelectCharacter(GameObject character, bool charDead = false)
     {
@@ -218,6 +276,8 @@ public class GameManager : MonoBehaviour
         game.playerList[1].selfBase.instantiateCharacterEvent += PlaceCharacter;
         game.playerList[0].selfBase.gameOver += GameOver;
         game.playerList[1].selfBase.gameOver += GameOver;
+        game.playerList[0].selfBase.attack += BasesAttack;
+        game.playerList[1].selfBase.attack += BasesAttack;
         for (int i = 0; i < availableCharactersCopy.Count; i++)
         {
             availableCharactersCopy[i].sendToBaseEvent += SendCharacterToBase;
@@ -245,6 +305,12 @@ public class GameManager : MonoBehaviour
                 availableUnityCharacters[i].SetActive(true);                
             }
         }
+    }
+    public void BasesAttack(ClassCell cell)
+    {
+        PlayAttackSound();
+        System.Random random = new System.Random();
+        Instantiate(availableUnityCharacters[random.Next(availableUnityCharacters.Count)].GetComponent<UnityCharacter>().RandomAnimation(), new Vector3(cell.X,cell.Y), Quaternion.identity, gameParent.transform);
     }
     public void ActivateSkill(GameObject character = null)
     {
@@ -338,14 +404,24 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
+    void CreateDaedricItems()
+    {
+        daedricItems.Add(new ClassDaedricItems("Oghma Infinium",0));
+        daedricItems.Add(new ClassDaedricItems("Cráneo de la Corrupción", 1));
+        daedricItems.Add(new ClassDaedricItems("Wabbajack", 2));
+        daedricItems.Add(new ClassDaedricItems("Anulador de Hechizos", 3));
+        daedricItems.Add(new ClassDaedricItems("Cuchilla de Mehrunes", 4));
+        daedricItems.Add(new ClassDaedricItems("Cota de Ébano", 5));
+    }
     void CreateCharacters()
     {
-        availableCharacters.Add(new ClassCharacter("Hermaeus Mora", 100, 10, 12));
-        availableCharacters.Add(new ClassCharacter("Vaermina", 100, 13, 12));
-        availableCharacters.Add(new ClassCharacter("Sheogorath", 100, 20, 15));
-        availableCharacters.Add(new ClassCharacter("Peryite", 100, 20, 10));
-        availableCharacters.Add(new ClassCharacter("Mehrunes Dagon", 150, 5, 30));
-        availableCharacters.Add(new ClassCharacter("Boethiah", 100, 20, 20));
+        availableCharacters.Add(new ClassCharacter("Hermaeus Mora", 100, 10, 12, 0));
+        availableCharacters.Add(new ClassCharacter("Vaermina", 100, 13, 12, 1));
+        availableCharacters.Add(new ClassCharacter("Sheogorath", 100, 20, 15, 2));
+        availableCharacters.Add(new ClassCharacter("Peryite", 100, 20, 10, 3));
+        availableCharacters.Add(new ClassCharacter("Mehrunes Dagon", 150, 5, 30, 4));
+        availableCharacters.Add(new ClassCharacter("Boethiah", 100, 20, 20, 5));
     }
     public void FillBoard()
     {
