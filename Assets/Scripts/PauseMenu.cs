@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pause;
     public GameObject itemInfo;
+    public string pdfReportName;
     void Start()
     {
         
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Tutorial()
     {
-
+        string filePath = Application.dataPath + "/" + pdfReportName;
+        Application.OpenURL("file://" + filePath);
     }
 }

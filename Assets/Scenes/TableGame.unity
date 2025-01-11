@@ -12151,6 +12151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 1669765472}
   itemInfo: {fileID: 706288567}
+  pdfReportName: Informe de Desarrollo.pdf
 --- !u!1 &1286950434
 GameObject:
   m_ObjectHideFlags: 0

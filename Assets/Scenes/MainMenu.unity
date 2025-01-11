@@ -340,7 +340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1198013615}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: Tutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -927,6 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917c26b67f4bbd478b70c813d87114d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pdfReportName: Informe de Desarrollo.pdf
 --- !u!82 &1198013616
 AudioSource:
   m_ObjectHideFlags: 0
