@@ -65,13 +65,14 @@ public class GameManager : MonoBehaviour
         CreateCharacters();
         availableCharactersCopy = new List<ClassCharacter>();
         availableCharactersCopy.AddRange(availableCharacters);
-        float cellSize = deadLandWall.GetComponent<RectTransform>().rect.width;
+        float cellSize = (Screen.width * 9 / 16) / (1080 / deadLandWall.GetComponent<RectTransform>().rect.width);
+        float delta = (Screen.height - (Screen.width * 9 / 16)) / 2;
         for (int iRow = -1; iRow <= ClassMaze.size; iRow++)
         {
             for (int iCol = -1; iCol <= ClassMaze.size; iCol++)
             {
-                float x = canvas.GetComponent<RectTransform>().rect.width / 2 - ((ClassMaze.size / 2) - iCol) * cellSize;
-                float y = canvas.GetComponent<RectTransform>().rect.height / 2 + ((ClassMaze.size / 2) - iRow) * cellSize;
+                float x = Screen.width / 2 - ((ClassMaze.size / 2) - iCol) * cellSize;
+                float y = ((Screen.width * 9 / 16) / 2 + ((ClassMaze.size / 2) - iRow) * cellSize) + delta;
                 Vector3 pos = new Vector3(x, y, 10f);
                 if ((iRow == -1 || iRow == ClassMaze.size || iCol == ClassMaze.size || iCol == -1))
                 {
